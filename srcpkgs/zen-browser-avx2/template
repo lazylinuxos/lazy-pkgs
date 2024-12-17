@@ -1,0 +1,29 @@
+# Template file for Zen Browser
+pkgname=zen-browser-avx2
+version=1.0.2b.2
+revision=1
+only_for_archs="x86_64"
+wrksrc="${pkgname}-${version}"
+build_style=meta
+hostmakedepends="tar bzip2"
+depends="libX11 libXcomposite libXdamage libXext libXfixes libXt libXtst libxkbcommon libxkbcommon-x11 libpng glib gtk+3"
+short_desc="Experience tranquillity while browsing the web without people tracking you!"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="MPL-2.0"
+homepage="https://www.zen-browser.app/"
+distfiles="https://github.com/zen-browser/desktop/releases/download/${version/b/-b}/zen.linux-specific.tar.bz2"
+checksum=8d314f5a3251120065a4c7983be9361b8677c074d29d23e16cf8a679004edeca
+
+do_install() {
+		# Install the files
+		vmkdir usr/lib/zen-browser
+		vcopy * usr/lib/zen-browser
+
+		vmkdir usr/share/applications
+		vinstall ${FILESDIR}/zen-browser.desktop 644 usr/share/applications
+		vinstall ${FILESDIR}/zen-browser.png 644 usr/share/pixmaps
+
+		# link the binary
+		vmkdir usr/bin/
+		ln -s /usr/lib/zen-browser/zen ${DESTDIR}/usr/bin/
+}

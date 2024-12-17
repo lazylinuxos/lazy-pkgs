@@ -1,0 +1,20 @@
+# Template file for 'yaak'
+# Repackages the official rpm package.
+pkgname=yaak
+version=2024.13.0
+revision=1
+archs="x86_64"
+create_wrksrc=yes
+hostmakedepends="rpmextract"
+short_desc="The most intuitive desktop API client"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="MIT License"
+homepage="hhttps://yaak.app/"
+changelog="https://yaak.app/blog/${version}"
+distfiles="https://github.com/mountain-loop/yaak/releases/download/v${version}/yaak-${version}-${revision}.x86_64.rpm"
+checksum=ec7e85d7287c9004176f09cd43ce9652a99b21885d776794740a1c04e3b87ba1 
+
+do_install() {
+	# Copy files
+	vcopy "*" /
+}
