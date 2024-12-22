@@ -1,0 +1,21 @@
+# Template file for 'thunar-shares-plugin'
+# Repackages the official rpm package.
+pkgname=thunar-shares-plugin
+version=0.3.2
+revision=1
+archs="x86_64"
+hostmakedepends="rpmextract"
+depends="samba smbclient gvfs-smb"
+short_desc="Quickly share a folder using Samba from Thunar"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="GPLv2"
+homepage="https://gitlab.xfce.org/thunar-plugins/thunar-shares-plugin"
+changelog="https://gitlab.xfce.org/thunar-plugins/thunar-shares-plugin/-/blob/master/NEWS"
+distfiles="https://download.opensuse.org/repositories/openSUSE:/Factory/standard/x86_64/thunar-plugin-shares-0.3.2-1.7.x86_64.rpm"
+checksum=f4c2e097b70ef018aebdba340d2631504c9af9a275b1220f8b163abfdf58da1b 
+
+do_install() {
+	vmkdir usr/lib64/thunarx-3
+	vcopy lib64/thunarx-3/* usr/lib64/thunarx-3/
+}
+

@@ -1,6 +1,6 @@
 # Template file for Zen Browser
 pkgname=zen-browser-avx2
-version=1.0.2b.2
+version=1.0.2b.3
 revision=1
 only_for_archs="x86_64"
 wrksrc="${pkgname}-${version}"
@@ -12,7 +12,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MPL-2.0"
 homepage="https://www.zen-browser.app/"
 distfiles="https://github.com/zen-browser/desktop/releases/download/${version/b/-b}/zen.linux-specific.tar.bz2"
-checksum=8d314f5a3251120065a4c7983be9361b8677c074d29d23e16cf8a679004edeca
+checksum=d646533f4e56b8622cc7371863120a2497753b0855e6869c51b3b9eb2003acbf
 
 do_install() {
 		# Install the files
