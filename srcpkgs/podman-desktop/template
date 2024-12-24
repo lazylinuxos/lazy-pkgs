@@ -1,0 +1,29 @@
+# Template file for Podman Desktop
+pkgname=podman-desktop
+version=1.15.0
+revision=1
+only_for_archs="x86_64"
+wrksrc="${pkgname}-${version}"
+build_style=meta
+hostmakedepends="tar"
+short_desc="A graphical tool for developing on containers and Kubernetes"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="Apache-2.0"
+nopie=yes
+homepage="https://podman-desktop.io/"
+distfiles="https://github.com/podman-desktop/podman-desktop/releases/download/v${version}/podman-desktop-${version}.tar.gz"
+checksum=9aead2d0eaf8b19da3057abe4442cebf14ebc419be51ba4d419d67c70507a3e5
+
+do_install() {
+		# Install the files
+		vmkdir opt/podman-desktop
+		vcopy * opt/podman-desktop
+
+		vmkdir usr/share/applications
+		vinstall ${FILESDIR}/podman-desktop.desktop 644 usr/share/applications
+		vinstall ${FILESDIR}/podman-desktop.png 644 usr/share/pixmaps
+
+		# link the binary
+		vmkdir usr/bin/
+		ln -s /opt/podman-desktop/podman-desktop ${DESTDIR}/usr/bin/
+}

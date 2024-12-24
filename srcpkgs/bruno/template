@@ -1,0 +1,21 @@
+# Template file for 'bruno'
+pkgname=bruno
+version=1.36.1
+revision=1
+short_desc="Opensource IDE For Exploring and Testing Api's"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+hostmakedepends="tar xz"
+license="MIT"
+homepage="https://www.usebruno.com"
+distfiles="https://github.com/usebruno/bruno/releases/download/v${version}/${pkgname}_${version}_amd64_linux.deb"
+checksum=b554fafbc6c05031f6b63912583c24700da96a9f568dff635be355538549e0cd
+nostrip=yes
+
+do_extract() {
+	mkdir -p ${DESTDIR}
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}_${version}_amd64_linux.deb
+}
+
+do_install() {
+	tar xf data.tar.xz -C ${DESTDIR}
+}
