@@ -3721,7 +3721,7 @@ libfrr.so.0 libfrr-6.0_1
 libkaccounts.so.2 kaccounts-integration-20.04.3_1
 libkaccounts6.so.2 kf6-kaccounts-integration-24.02.0_1
 libfrrospfapiclient.so.0 libfrrospfapiclient-6.0_1
-liborocos-kdl.so.1.4 orocos-kdl-1.4.0_1
+liborocos-kdl.so.1.5 orocos-kdl-1.5.1_1
 libibumad.so.3 rdma-core-22.1_1
 libibverbs.so.1 rdma-core-22.1_1
 librdmacm.so.1 rdma-core-22.1_1
@@ -3732,11 +3732,11 @@ libqhttpengine.so.1 qhttpengine-1.0.1_1
 libqmdnsengine.so.0 qmdnsengine-0.1.0_1
 libyang.so.1 libyang-1.0r5_1
 libhtp.so.2 libhtp-0.5.30_1
-libgedit-48.so gedit-48.0_1
+libgedit-48.1.so gedit-48.1_1
 libgedit-amtk-5.so.0 libgedit-amtk-5.8.0_1
-libgedit-gtksourceview-300.so.2 libgedit-gtksourceview-299.3.0_1
+libgedit-gtksourceview-300.so.3 libgedit-gtksourceview-299.4.0_1
 libgedit-gfls-1.so.0 libgedit-gfls-0.1.0_1
-libgedit-tepl-6.so.1 libgedit-tepl-6.11.0_1
+libgedit-tepl-6.so.2 libgedit-tepl-6.12.0_1
 libchewing.so.3 libchewing-0.5.1_1
 libdwarves.so.1 pahole-1.12_1
 libdwarves_emit.so.1 pahole-1.12_1
