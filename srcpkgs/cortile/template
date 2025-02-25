@@ -21,6 +21,6 @@ do_install() {
   vinstall ${FILESDIR}/cortile.desktop 644 usr/share/applications
   vinstall ${FILESDIR}/cortile.png 644 usr/share/pixmaps
 
-  vdoc README.md	
+  vdoc README.md
   vlicense LICENSE
 }

@@ -9,10 +9,10 @@ hostmakedepends="tar"
 short_desc="Graphical tool for developing on containers and Kubernetes"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="Apache-2.0"
-nopie=yes
 homepage="https://podman-desktop.io/"
 distfiles="https://github.com/podman-desktop/podman-desktop/releases/download/v${version}/podman-desktop-${version}.tar.gz"
 checksum=4c17b2eb11955408b5c3a952b31c92f4ce8577a7b0f2176d64463ddc8403d3f9
+nopie=yes
 
 do_install() {
 	# Install the files

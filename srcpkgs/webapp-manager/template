@@ -7,7 +7,7 @@ depends="dconf python3-BeautifulSoup4 python3-configobj python3-gobject
  python3-Pillow python3-setproctitle python3-tldextract xapps"
 short_desc="Run websites as if they were apps"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
-license="GPL-3.0"
+license="GPL-3.0-or-later"
 homepage="https://github.com/linuxmint/webapp-manager"
 distfiles="https://github.com/linuxmint/${pkgname}/archive/refs/tags/${version}.tar.gz"
 checksum=2d098765cc1d9124cceb4a32b06f38bd96a4e003d4a5bd8c83d850f34c877c73

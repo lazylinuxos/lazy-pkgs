@@ -11,9 +11,10 @@ license="MIT"
 homepage="https://abdenasser.github.io/neohtop/"
 changelog="https://github.com/Abdenasser/neohtop/compare/v1.1.1...v1.1.2"
 distfiles="https://github.com/Abdenasser/neohtop/releases/download/v${version}/NeoHtop_${version}_x86_64.rpm"
-checksum=f18ad075b0529647aa1c9269c5ab9a6b0eda43854505079229e05b1b5535e896 
+checksum=f18ad075b0529647aa1c9269c5ab9a6b0eda43854505079229e05b1b5535e896
 
 do_install() {
 	# Copy files
 	vcopy "*" /
+	vlicense LICENSE
 }
