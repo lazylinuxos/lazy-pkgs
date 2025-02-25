@@ -1,4 +1,4 @@
-# Template file for muCommander
+# Template file for 'muCommander'
 # Repackages the official rpm package.
 pkgname=muCommander
 version=1.5.2

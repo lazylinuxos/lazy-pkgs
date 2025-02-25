@@ -1,4 +1,4 @@
-# Template file for Podman Desktop
+# Template file for 'Podman Desktop'
 pkgname=podman-desktop
 version=1.16.2
 revision=1

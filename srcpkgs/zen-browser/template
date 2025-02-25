@@ -1,4 +1,4 @@
-# Template file for Zen Browser
+# Template file for 'Zen Browser'
 pkgname=zen-browser
 version=1.8.1b
 revision=1
@@ -7,7 +7,7 @@ wrksrc="${pkgname}-${version}"
 build_style=meta
 hostmakedepends="tar xz"
 depends="libX11 libXcomposite libXdamage libXext libXfixes libXt libXtst libxkbcommon libxkbcommon-x11 libpng glib gtk+3"
-short_desc="Experience tranquillity while browsing the web without people tracking you!"
+short_desc="Experience tranquillity while browsing the web."
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MPL-2.0"
 homepage="https://www.zen-browser.app/"
