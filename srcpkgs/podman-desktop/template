@@ -1,12 +1,12 @@
-# Template file for 'Podman Desktop'
+# Template file for 'podman-desktop'
 pkgname=podman-desktop
 version=1.16.2
 revision=1
-only_for_archs="x86_64"
-wrksrc="${pkgname}-${version}"
+archs="x86_64"
+create_wrksrc=yes
 build_style=meta
 hostmakedepends="tar"
-short_desc="A graphical tool for developing on containers and Kubernetes"
+short_desc="Graphical tool for developing on containers and Kubernetes"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="Apache-2.0"
 nopie=yes

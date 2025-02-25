@@ -3,12 +3,12 @@
 pkgname=muCommander
 version=1.5.2
 revision=1
-only_for_archs="x86_64"
+archs="x86_64"
 create_wrksrc=yes
 hostmakedepends="rpmextract"
-short_desc="A lightweight, cross-platform file manager with a dual-pane interface"
+short_desc="File manager with a dual-pane interface"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
-license="GPL"
+license="GPL-1.0-or-later"
 homepage="https://www.mucommander.com"
 distfiles="https://github.com/mucommander/mucommander/releases/download/${version}-1/mucommander-${version}-1.x86_64.rpm"
 checksum=8fced3865ed4181f11ce0d8a0f1a7a0da8564889d73fa0c0e67cb95a5f21757f
