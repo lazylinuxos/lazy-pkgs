@@ -1,20 +1,21 @@
-# Template file for yaak
+# Template file for 'yaak'
 pkgname=yaak
 version=2025.1.1
 revision=1
 archs="x86_64"
 create_wrksrc=yes
 hostmakedepends="rpmextract"
-short_desc="The most intuitive desktop API client"
+short_desc="Intuitive desktop API client"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
-license="MIT License"
-nopie=yes
+license="MIT"
 homepage="hhttps://yaak.app/"
 changelog="https://yaak.app/blog/${version}"
 distfiles="https://github.com/mountain-loop/yaak/releases/download/v${version}/yaak-${version}-${revision}.x86_64.rpm"
 checksum=ee82732d93f54123b65f6ca497500bd6f7e29fbb5e4d996c3e12f2332ae3bdc7
+nopie=yes
 
 do_install() {
 	# Copy files
 	vcopy "*" /
+	vlicense LICENSE
 }
