@@ -17,7 +17,7 @@ checksum=749e7ae59430f3cb5c8ba0467a9ef5f686faa089402e6502d3170122a8af671c
 do_install() {
 	# Install the files
 	vmkdir usr/lib/zen-browser
-	vcopy * usr/lib/zen-browser
+	vcopy zen/* usr/lib/zen-browser
 
 	vmkdir usr/share/applications
 	vinstall ${FILESDIR}/zen-browser.desktop 644 usr/share/applications
