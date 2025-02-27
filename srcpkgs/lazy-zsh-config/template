@@ -10,7 +10,7 @@ depends="zsh oh-my-zsh zsh-syntax-highlighting zsh-autosuggestions zsh-history-s
 short_desc="LazyLinux Zsh config"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="Apache-2.0"
-homepage="https://github.com/lazylinuxos/ohmyzsh"
+homepage="https://github.com/lazylinuxos/lazy-zsh-config"
 distfiles="https://github.com/lazylinuxos/lazy-zsh-config/releases/download/v${version}/lazy-zsh-config.tar.xz"
 checksum=fb9e51e8f9f71258efddb0a177dc7d27a6e46d6cb7215f01d25e251509bcc5ac
 
