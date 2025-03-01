@@ -1,0 +1,22 @@
+# Template file for 'zed'
+pkgname=zed
+version=0.175.6
+revision=1
+archs="x86_64"
+create_wrksrc=yes
+build_style=meta
+hostmakedepends="tar"
+depends="vulkan-loader mesa-vulkan-intel intel-video-accel"
+short_desc="High-performance, multiplayer code editor"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="AGPL-3.0-or-later, Apache-2.0, GPL-3.0-or-later"
+homepage="https://zed.dev/"
+distfiles="https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-x86_64.tar.gz"
+checksum=c9d98fbae6125995c7377b99d3996c880a4755a386588397c88fdf9699a997ff
+
+do_install() {
+	vmkdir usr
+	vcopy ${wrksrc}/zed.app/* usr
+
+	vlicense ${FILESDIR}/LICENSE-AGPL.txt
+}
