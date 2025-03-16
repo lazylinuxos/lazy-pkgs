@@ -1,6 +1,6 @@
 # Template file for 'yaak'
 pkgname=yaak
-version=2025.1.1
+version=2025.1.2
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -11,11 +11,11 @@ license="MIT"
 homepage="hhttps://yaak.app/"
 changelog="https://yaak.app/blog/${version}"
 distfiles="https://github.com/mountain-loop/yaak/releases/download/v${version}/yaak-${version}-${revision}.x86_64.rpm"
-checksum=ee82732d93f54123b65f6ca497500bd6f7e29fbb5e4d996c3e12f2332ae3bdc7
+checksum=4133242e9197ed1164ceb8eac0cdcd08f8c902ebf0cf4f65431de1a490ea279c
 nopie=yes
 
 do_install() {
 	# Copy files
 	vcopy "*" /
-	vlicense LICENSE
+	vlicense ${FILESDIR}/LICENSE.txt
 }

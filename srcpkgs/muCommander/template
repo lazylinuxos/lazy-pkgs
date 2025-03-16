@@ -18,7 +18,7 @@ do_install() {
 		vcopy "*" /
 
 		vmkdir usr/share/applications
-		vinstall ${DESTDIR}/opt/mucommander/lib/mucommander-muCommander.desktop 644 usr/share/applications
+		vinstall ${FILESDIR}/mucommander-muCommander.desktop 644 usr/share/applications
 		vinstall ${DESTDIR}/opt/mucommander/lib/muCommander.png 644 usr/share/pixmaps
 
 		# link the binary

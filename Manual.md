@@ -721,7 +721,8 @@ Example:
 
 - `alternatives` A white space separated list of supported alternatives the package provides.
 A list is composed of three components separated by a colon: group, symlink and target.
-Example: `alternatives="vi:/usr/bin/vi:/usr/bin/nvi ex:/usr/bin/ex:/usr/bin/nvi-ex"`.
+Example: `alternatives="vi:/
+vi:/usr/bin/nvi ex:/usr/bin/ex:/usr/bin/nvi-ex"`.
 
 - `font_dirs` A white space separated list of directories specified by an absolute path where a
 font package installs its fonts.

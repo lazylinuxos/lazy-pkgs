@@ -1,0 +1,34 @@
+# Template file for 'windterm'
+pkgname=windterm
+version=2.7.0
+revision=1
+archs="x86_64"
+create_wrksrc=yes
+build_style=meta
+hostmakedepends="unzip"
+short_desc="SSH/Sftp/Shell/Telnet/Tmux/Serial terminal"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="Apache-2.0"
+homepage="https://kingtoolbox.github.io/"
+distfiles="https://github.com/kingToolbox/WindTerm/releases/download/${version}/WindTerm_${version}_Linux_Portable_x86_64.zip"
+checksum=7797697eeb60239020512e2b549695a60c39b3fd01fe7ebb047fd50a2889103c
+nopie=yes
+
+do_install() {
+	vmkdir opt/windterm/
+	vcopy ${wrksrc}/WindTerm_${version}/* opt/windterm
+
+	vinstall ${wrksrc}/WindTerm_${version}/windterm.png 644 usr/share/pixmaps
+	vinstall ${wrksrc}/WindTerm_${version}/windterm.desktop 644 usr/share/applications
+	
+	vlicense ${wrksrc}/WindTerm_${version}/license.txt
+	
+	chmod 755 ${DESTDIR}/opt/windterm/WindTerm
+	
+	touch ${DESTDIR}/opt/windterm/profiles.config
+    chmod 775 ${DESTDIR}/opt/windterm/profiles.config
+    
+    # link the binary
+	vmkdir usr/bin/
+	ln -s /opt/windterm/WindTerm ${DESTDIR}/usr/bin/windterm
+}
