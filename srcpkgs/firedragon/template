@@ -16,8 +16,8 @@ distfiles="https://gitlab.com/garuda-linux/firedragon/builder/-/releases/v${_ver
 checksum=9ba46a1432d6eb0b6277899c903a6ff946314cf66ceda67af04d55404eef8c5d
 
 do_install() {
-	vmkdir opt/
-	vcopy ${wrksrc}/* opt
+	vmkdir usr/lib
+	vcopy ${wrksrc}/* usr/lib
 
 	vmkdir usr/share
 	vinstall ${FILESDIR}/firedragon.desktop 644 usr/share/applications/
@@ -28,5 +28,5 @@ do_install() {
 
 	# link the binary
 	vmkdir usr/bin/
-	ln -s /opt/firedragon/firedragon-bin ${DESTDIR}/usr/bin/firedragon
+	ln -s /usr/lib/firedragon/firedragon-bin ${DESTDIR}/usr/bin/firedragon
 }
