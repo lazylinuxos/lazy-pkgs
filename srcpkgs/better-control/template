@@ -1,6 +1,6 @@
 # Template file for 'better-control'
 pkgname=better-control
-version=5.2
+version=5.6
 revision=1
 hostmakedepends="gettext"
 depends="gtk+3 NetworkManager bluez libspa-bluetooth pipewire brightnessctl python3-gobject 
@@ -10,7 +10,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/quantumvoid0/better-control"
 distfiles="https://github.com/quantumvoid0/better-control/archive/refs/tags/${version}.tar.gz"
-checksum=e7aa6e9d7f2e84ba285156f928060d5f76a7c6edf1d1b5ce8b78662ca2ec869a
+checksum=90e4a9d5577f64ce6ea60f3c7b3c9c9287a55a6307996be116dab1155d35a8d7
 
 do_install() {
 	make DESTDIR=${DESTDIR} install
