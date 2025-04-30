@@ -1,6 +1,6 @@
 # Template file for 'waterfox'
 pkgname=waterfox
-version=6.5.6
+version=6.5.7
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -13,7 +13,7 @@ license="MPL-2.0"
 homepage="https://www.waterfox.net"
 changelog="${homepage}/docs/releases/${version}/"
 distfiles="https://cdn1.waterfox.net/${pkgname}/releases/${version}/Linux_x86_64/${pkgname}-${version}.tar.bz2"
-checksum=94e0ce650f7cd007fc985f0fc9df1867910d901849c2b0441352a13c611e3d42
+checksum=2107321748f638a9c5348302d7adc35982d7d4b3f7f7dcfbef963c7f9b81da11
 
 do_install() {
 	vmkdir "opt"
