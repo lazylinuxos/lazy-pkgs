@@ -1,6 +1,7 @@
 # Template file for 'better-control'
 pkgname=better-control
-version=6.10.2
+version=6.11.2
+_version=6.11.2
 revision=1
 hostmakedepends="gettext"
 depends="gtk+3 NetworkManager bluez pulseaudio brightnessctl power-profiles-daemon gammastep python3
@@ -9,8 +10,8 @@ short_desc="Simple control panel for linux"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/quantumvoid0/better-control"
-distfiles="https://github.com/quantumvoid0/better-control/archive/refs/tags/v${version}.tar.gz"
-checksum=175235b471e9f7e0cfdcad51e8ec443da6d5fca746f07809d83d369c420f8436
+distfiles="https://github.com/quantumvoid0/better-control/archive/refs/tags/v${_version}.tar.gz"
+checksum=1c2fc30c2786464ad98abed3b6b28e67c044bea414053ca740916afe55aa2170
 
 do_install() {
 	make DESTDIR=${DESTDIR} install

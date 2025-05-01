@@ -1,0 +1,31 @@
+# Template file for 'cromite'
+pkgname=cromite
+version=135.0.7049.115
+_cromite_commit=555f445aa033f78991d2df3544fd44b1de0f4340
+revision=1
+archs="x86_64"
+create_wrksrc=yes
+build_style=meta
+hostmakedepends="tar xz"
+depends="gtk+3 libXScrnSaver nss alsa-lib"
+short_desc="Cromite a Bromite fork with ad blocking"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/uazo/cromite"
+distfiles="https://github.com/uazo/cromite/releases/download/v${version}-${_cromite_commit}/chrome-lin64.tar.gz"
+checksum=9c6ae8502a2d3d4c0e1c168cd3731fc2e3f7a3ba7ed895c06622b261c3edc3a2
+
+do_install() {
+	# Install the files
+	vmkdir usr/lib/cromite
+	vcopy chrome-lin/* usr/lib/cromite
+
+	vmkdir usr/share/applications
+	vinstall ${FILESDIR}/cromite.desktop 644 usr/share/applications
+	vinstall ${FILESDIR}/cromite.png 644 usr/share/pixmaps
+	vinstall ${FILESDIR}/cromite.png 644 usr/share/icons/hicolor/scalable/apps
+	
+	# link the binary
+	vmkdir usr/bin/
+	ln -s /usr/lib/cromite/chrome ${DESTDIR}/usr/bin/cromite
+}
