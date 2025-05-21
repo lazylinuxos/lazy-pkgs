@@ -16,6 +16,7 @@ checksum=5cca97e38038732ea678b4babf63659dbca7e3a19b4055360d3a19a71a435985
 do_install() {
 	# Remove cron job
 	rm -f etc/cron.daily/brave-browser
+	rm -f usr/share/applications/com.brave.Browser.desktop
 	# Copy files
 	vcopy "*" /
 	# Install the icon
