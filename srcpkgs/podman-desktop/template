@@ -1,6 +1,6 @@
 # Template file for 'podman-desktop'
 pkgname=podman-desktop
-version=1.18.1
+version=1.19.1
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -11,7 +11,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="Apache-2.0"
 homepage="https://podman-desktop.io/"
 distfiles="https://github.com/podman-desktop/podman-desktop/releases/download/v${version}/podman-desktop-${version}.tar.gz"
-checksum=c680931c45fba7e3623fa0f96cf109589a901c39eec4ee2280cd137fced3df9e
+checksum=f50ff338800a59f3965d747f63ab041f91c64e01e8f5d62ee02961e236bf7ebb
 nopie=yes
 
 do_install() {
