@@ -1,7 +1,7 @@
 # Template file for 'cromite'
 pkgname=cromite
-version=137.0.7151.56
-_cromite_commit=b4f8d96284c854cbe6448d2e30ee5a30ce3f0b82
+version=137.0.7151.72
+_cromite_commit=4ea840397d139bcaf3298a54a80a93d135f7dac7
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -13,7 +13,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/uazo/cromite"
 distfiles="https://github.com/uazo/cromite/releases/download/v${version}-${_cromite_commit}/chrome-lin64.tar.gz"
-checksum=7f9dd787ac6f93967cb6483f494652fa994eddaed0be7e9f7f64a88fb0efbeac
+checksum=5aa3906a86e846a8185d6dadcf25b72cca3959103c9795168d49df048abaafd9
 
 do_install() {
 	# Install the files
