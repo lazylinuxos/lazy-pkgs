@@ -14,7 +14,7 @@ homepage="https://github.com/samuelcolvin/watchfiles"
 distfiles="https://github.com/samuelcolvin/watchfiles/archive/v${version}/python-watchfiles-${version}.tar.gz"
 checksum=9f9765fa55e2cd731dddd2477c505c3b7024269128ca1a5966699cd961260612
 
-do_prepare() {
+pre_build() {
 	cd "$wrksrc"
 	# Prevent test discovery from picking up the local module
 	rm -v tests/__init__.py
