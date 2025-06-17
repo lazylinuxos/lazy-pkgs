@@ -1,0 +1,27 @@
+# Template file for 'floorp'
+pkgname=floorp
+version=11.27.0
+revision=1
+archs="x86_64"
+depends="gtk+3 desktop-file-utils hicolor-icon-theme"
+short_desc="Advanced and Fast Firefox derivative"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="MPL-2.0, GPL-2.0-or-later, LGPL-2.1-or-later"
+homepage="https://floorp.app/en"
+distfiles="https://github.com/Floorp-Projects/Floorp/releases/download/v${version}/${pkgname}-${version}.linux-${archs}.tar.bz2"
+checksum=7bceaf11bf76bde39fa60f5566ff7296fc23a6f83fc5d621ba32f973559369de
+nopie=yes
+
+do_install() {
+	vmkdir usr/lib/${pkgname}
+	vmkdir usr/share/applications
+	vmkdir usr/bin
+	vmkdir usr/share/pixmaps
+
+	vcopy * usr/lib/${pkgname}
+	vinstall ${FILESDIR}/${pkgname}.desktop 644 usr/share/applications
+	vinstall ${FILESDIR}/policies.json 644 usr/lib/${pkgname}/distribution
+	vcopy ${DESTDIR}/usr/lib/${pkgname}/browser/chrome/icons/default/default128.png usr/share/pixmaps/${pkgname}.png
+
+	ln -frs ${DESTDIR}/usr/lib/${pkgname}/${pkgname} ${DESTDIR}/usr/bin
+}
