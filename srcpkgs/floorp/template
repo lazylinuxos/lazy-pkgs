@@ -1,6 +1,6 @@
 # Template file for 'floorp'
 pkgname=floorp
-version=11.28.0
+version=12.0.14
 revision=1
 archs="x86_64"
 depends="gtk+3 desktop-file-utils hicolor-icon-theme"
@@ -8,8 +8,8 @@ short_desc="Advanced and Fast Firefox derivative"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MPL-2.0, GPL-2.0-or-later, LGPL-2.1-or-later"
 homepage="https://floorp.app/en"
-distfiles="https://github.com/Floorp-Projects/Floorp/releases/download/v${version}/${pkgname}-${version}.linux-${archs}.tar.bz2"
-checksum=17d35b6ccf0452cf9986c0b886c993ee1297b4c2df60e54aef0a426d581c7df8
+distfiles="https://github.com/Floorp-Projects/Floorp/releases/download/v${version}/${pkgname}-linux-amd64.tar.xz"
+checksum=d877a6ba60190630bb2e08c47e76971400b2963aefa0dad3efa323d4c243da75
 nopie=yes
 
 do_install() {

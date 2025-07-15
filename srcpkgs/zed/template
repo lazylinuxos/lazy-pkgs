@@ -1,6 +1,6 @@
 # Template file for 'zed'
 pkgname=zed
-version=0.193.3
+version=0.194.3
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -12,7 +12,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="AGPL-3.0-or-later, Apache-2.0, GPL-3.0-or-later"
 homepage="https://zed.dev/"
 distfiles="https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-x86_64.tar.gz"
-checksum=b41ea45e2fa58be8695c9ec0f18bc770c526c714101b76a741d19f9156341f48
+checksum=440993c22c7296104cd17a5b0b83ecd10296faead4b74eeb2fd61e2a9b112ee4
 
 do_install() {
 	vmkdir opt/zed/bin
@@ -27,7 +27,7 @@ do_install() {
 	vmkdir usr/share
 	vcopy ${wrksrc}/zed.app/share/* usr/share
 
-	vlicense ${FILESDIR}/LICENSE-AGPL.txt
+	vlicense ${FILESDIR}/LICENSE-AGPL
 	vinstall ${FILESDIR}/zed.desktop 644 usr/share/applications/
 
 	# link the binary

@@ -17,5 +17,5 @@ nopie=yes
 do_install() {
 	# Copy files
 	vcopy "*" /
-	vlicense ${FILESDIR}/LICENSE.txt
+	vlicense ${FILESDIR}/LICENSE
 }
