@@ -1,7 +1,7 @@
 # Template file for 'librewolf'
 pkgname=librewolf
-version=140.0.2
-_version=140.0.2-1
+version=140.0.4
+_version=140.0.4-1
 revision=1
 archs="x86_64"
 build_style="fetch"
@@ -10,7 +10,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MPL-2.0"
 homepage="https://gitlab.com/librewolf-community"
 distfiles="https://gitlab.com/api/v4/projects/44042130/packages/generic/${pkgname}/${_version}/${pkgname}-${_version}-linux-x86_64-deb.deb"
-checksum=b34c791e4acad80007be8271819d2baaf7ba7f93e480eaa9a1124f2cff9e2e78
+checksum=ab4d268abe66d0ebcfe99cdc415330e9277abf7f253b050d3b694b2e1af03710
 
 do_install() {
 	vextract -C ${DESTDIR} ${pkgname}-${_version}-linux-x86_64-deb.deb
