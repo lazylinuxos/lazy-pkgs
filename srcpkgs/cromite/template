@@ -1,7 +1,7 @@
 # Template file for 'cromite'
 pkgname=cromite
-version=138.0.7204.97
-_cromite_commit=418943de425329115e0783375c12ee5aec36e2b6
+version=138.0.7204.169
+_cromite_commit=bd85e1d8092b493c5aa87292c98065aba3087112
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -13,7 +13,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/uazo/cromite"
 distfiles="https://github.com/uazo/cromite/releases/download/v${version}-${_cromite_commit}/chrome-lin64.tar.gz"
-checksum=0cd315866c9c5df0307067264c56fbde90947a30f1e621a73e98d5317ac9e54b
+checksum=f5bed0137ac922ca7d21208ff396caae42f47998df69b9d25aba874c60ba6cd8
 
 do_install() {
 	# Install the files
@@ -24,7 +24,7 @@ do_install() {
 	vinstall ${FILESDIR}/cromite.desktop 644 usr/share/applications
 	vinstall ${FILESDIR}/cromite.png 644 usr/share/pixmaps
 	vinstall ${FILESDIR}/cromite.png 644 usr/share/icons/hicolor/scalable/apps
-	
+
 	# link the binary
 	vmkdir usr/bin/
 	ln -s /usr/lib/cromite/chrome ${DESTDIR}/usr/bin/cromite

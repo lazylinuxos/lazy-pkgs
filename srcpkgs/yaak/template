@@ -1,6 +1,6 @@
 # Template file for 'yaak'
 pkgname=yaak
-version=2025.4.0
+version=2025.5.5
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -11,7 +11,7 @@ license="MIT"
 homepage="hhttps://yaak.app/"
 changelog="https://yaak.app/blog/${version}"
 distfiles="https://github.com/mountain-loop/yaak/releases/download/v${version}/yaak-${version}-${revision}.x86_64.rpm"
-checksum=98c56b1955b5ee344fc433e1343c759c16ecd9871410d5e6f3ab7a41e017ebc4
+checksum=24e32039935850abccd4ea1a6789160b3efb5685f7b6561ca06ce03a95b3125d
 nopie=yes
 
 do_install() {

@@ -1,6 +1,6 @@
 # Template file for 'zed'
 pkgname=zed
-version=0.195.5
+version=0.196.6
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -12,7 +12,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="AGPL-3.0-or-later, Apache-2.0, GPL-3.0-or-later"
 homepage="https://zed.dev/"
 distfiles="https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-x86_64.tar.gz"
-checksum=efcf6445b9fbdd6adec8c3f357d267d0333b36dff5d548c5354172187208838b
+checksum=505317dfc9aa8627f1ac39e7a74d1bff53951cec3555b74ddc7be943a2dd8e94
 
 do_install() {
 	vmkdir opt/zed/bin
