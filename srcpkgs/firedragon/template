@@ -1,7 +1,7 @@
 # Template file for 'firedragon'
 pkgname=firedragon
-version=11.28.0
-_version=11.28.0-2
+version=11.29.0
+_version=11.29.0-1
 revision=2
 archs="x86_64"
 create_wrksrc=yes
@@ -13,7 +13,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MPL2"
 homepage="https://firedragon.garudalinux.org"
 distfiles="https://gitlab.com/garuda-linux/firedragon/builder/-/releases/v${_version}/downloads/firedragon-v${_version}.linux-x86_64.tar.zst"
-checksum=381d4321b01f387fa605edaf483ae426b772220b05126f36abc51c7de35d0cdb
+checksum=f8ec9b0860294642d9d688d5be64fe1b4dad5faca08aa2eba17f06e0b4062cef
 
 do_install() {
 	vmkdir usr/lib
