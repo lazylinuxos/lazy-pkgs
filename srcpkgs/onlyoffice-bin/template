@@ -12,6 +12,7 @@ homepage="https://www.onlyoffice.com/"
 distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/onlyoffice-desktopeditors_amd64.deb"
 checksum=c0ee2df6513b8079aee35fd0da5607559bbfa05c1a04b63606776899a15d621a
 nostrip=yes
+replaces="onlyoffice"
 
 do_extract() {
         mkdir -p ${DESTDIR}

@@ -11,6 +11,7 @@ homepage="https://www.usebruno.com"
 distfiles="https://github.com/usebruno/bruno/releases/download/v${version}/${_pkgname}_${version}_amd64_linux.deb"
 checksum=79237728f2b0dff4c8deb73fb9e55b2de191873bce37454e06a88d9189bc4d82
 nostrip=yes
+replaces="bruno"
 
 do_extract() {
 	mkdir -p ${DESTDIR}

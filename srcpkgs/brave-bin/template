@@ -12,6 +12,7 @@ homepage="https://www.brave.com/"
 changelog="https://brave.com/latest/"
 distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser-${version}-1.x86_64.rpm"
 checksum=845eb9477ad188e1a005f69ed529382d570d828a29b4b5b49b7fd1caefa5541c
+replaces="brave brave-browser"
 
 do_install() {
 	# Remove cron job

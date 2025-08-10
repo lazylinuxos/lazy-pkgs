@@ -11,6 +11,7 @@ license="MIT"
 homepage="https://termscp.veeso.dev"
 distfiles="https://github.com/veeso/termscp/releases/download/v${version}/${_pkgname}_${version}_amd64.deb"
 checksum=bcbcfc31471965e7b20344c6e346bc08cdb47ef278659b5f2abddb524f860347
+replaces="termscp"
 
 do_extract() {
 	mkdir -p ${DESTDIR}

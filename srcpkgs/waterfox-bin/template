@@ -15,6 +15,7 @@ homepage="https://www.waterfox.net"
 changelog="${homepage}/docs/releases/${version}/"
 distfiles="https://cdn1.waterfox.net/${_pkgname}/releases/${version}/Linux_x86_64/${_pkgname}-${version}.tar.bz2"
 checksum=e3a8c17afa7160d67f7e6caedd1069805f3b5cf4e87e8e3fc0fb736571838bc5
+replaces="waterfox"
 
 do_install() {
 	vmkdir "opt"

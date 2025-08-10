@@ -14,6 +14,7 @@ license="MPL"
 homepage="https://www.seamonkey-project.org"
 distfiles="https://archive.seamonkey-project.org/releases/${_version}/linux-x86_64/en-US/seamonkey-${_version}.en-US.linux-x86_64.tar.bz2"
 checksum=19e819428dbec28e63ca197444d80e8456f106a462254521009f7ae85dae5c16
+replaces="seamonkey"
 
 do_install() {
 	vmkdir usr/lib

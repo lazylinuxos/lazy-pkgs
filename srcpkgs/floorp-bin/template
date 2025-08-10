@@ -12,6 +12,7 @@ homepage="https://floorp.app/en"
 distfiles="https://github.com/Floorp-Projects/Floorp/releases/download/v${version}/${_pkgname}-linux-amd64.tar.xz"
 checksum=6e5493d8f692bbb17cb8610167b391433ca038b4cb0491db014373a08cc52e95
 nopie=yes
+replaces="floorp"
 
 do_install() {
 	vmkdir usr/lib/${_pkgname}

@@ -12,6 +12,7 @@ license="MPL-2.0"
 homepage="https://gitlab.com/librewolf-community"
 distfiles="https://gitlab.com/api/v4/projects/44042130/packages/generic/${_pkgname}/${_version}/${_pkgname}-${_version}-linux-x86_64-deb.deb"
 checksum=a6413fa250be22355fc096e586f3a365a01fa1e3b6debc26933b08fc6505c8ac
+replaces="librewolf"
 
 do_install() {
 	vextract -C ${DESTDIR} ${_pkgname}-${_version}-linux-x86_64-deb.deb

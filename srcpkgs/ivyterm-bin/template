@@ -13,6 +13,7 @@ license="GPL-3.0"
 homepage="https://github.com/Tomiyou/ivyterm"
 distfiles="https://github.com/Tomiyou/ivyterm/releases/download/v${version}/ivyterm-${version}-1.x86_64.rpm"
 checksum=cdcb5f0b30e5322f78202a2403f6ff13751eb9d8e83d38d9f427c8936a418e89 
+replaces="ivyterm"
 
 do_install() {
 	# Copy files

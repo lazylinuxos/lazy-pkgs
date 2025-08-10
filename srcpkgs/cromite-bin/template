@@ -14,6 +14,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/uazo/cromite"
 distfiles="https://github.com/uazo/cromite/releases/download/v${version}-${_cromite_commit}/chrome-lin64.tar.gz"
 checksum=babcd56252aa76ba616f186a0b1da1b428e34f693070833370d36a87e651ed71
+replaces="cromite"
 
 do_install() {
 	# Install the files

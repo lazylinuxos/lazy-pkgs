@@ -14,6 +14,7 @@ license="MPL2"
 homepage="https://firedragon.garudalinux.org"
 distfiles="https://gitlab.com/garuda-linux/firedragon/builder/-/releases/v${_version}/downloads/firedragon-v${_version}.linux-x86_64.tar.zst"
 checksum=f8ec9b0860294642d9d688d5be64fe1b4dad5faca08aa2eba17f06e0b4062cef
+replaces="firedragon"
 
 do_install() {
 	vmkdir usr/lib

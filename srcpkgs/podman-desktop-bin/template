@@ -13,6 +13,7 @@ homepage="https://podman-desktop.io/"
 distfiles="https://github.com/podman-desktop/podman-desktop/releases/download/v${version}/podman-desktop-${version}.tar.gz"
 checksum=16b6444e55a7143512ac6c1b3c1bf68f28783353c2f40a0a15144021869b0b66
 nopie=yes
+replaces="podman-desktop"
 
 do_install() {
 	# Install the files

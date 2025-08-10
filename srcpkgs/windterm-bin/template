@@ -16,6 +16,7 @@ nocheckperms=yes
 nofixperms=yes
 nopie=yes
 nostrip=yes
+replaces="windterm"
 
 pre_install() {
 	# Replace placeholders
