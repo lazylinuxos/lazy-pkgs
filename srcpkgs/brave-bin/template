@@ -1,0 +1,28 @@
+# Template file for 'brave-bin'
+pkgname=brave-bin
+version=1.81.131
+revision=1
+archs="x86_64"
+create_wrksrc=yes
+hostmakedepends="rpmextract"
+short_desc="Browser that rethinks the web"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="MPL-2.0"
+homepage="https://www.brave.com/"
+changelog="https://brave.com/latest/"
+distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser-${version}-1.x86_64.rpm"
+checksum=845eb9477ad188e1a005f69ed529382d570d828a29b4b5b49b7fd1caefa5541c
+
+do_install() {
+	# Remove cron job
+	rm -f etc/cron.daily/brave-browser
+	rm -f usr/share/applications/com.brave.Browser.desktop
+	# Copy files
+	vcopy "*" /
+	# Install the icon
+	vmkdir usr/share/pixmaps
+	vinstall opt/brave.com/brave/product_logo_128.png 644 usr/share/pixmaps brave-browser.png
+
+	vmkdir etc/brave/policies/managed
+	vinstall ${FILESDIR}/policies.json 644 etc/brave/policies/managed/
+}
