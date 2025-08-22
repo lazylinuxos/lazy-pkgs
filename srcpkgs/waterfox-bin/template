@@ -1,7 +1,7 @@
 # Template file for 'waterfox-bin'
 pkgname=waterfox-bin
 _pkgname=waterfox
-version=6.6.0
+version=6.6.1
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -14,7 +14,7 @@ license="MPL-2.0"
 homepage="https://www.waterfox.net"
 changelog="${homepage}/docs/releases/${version}/"
 distfiles="https://cdn1.waterfox.net/${_pkgname}/releases/${version}/Linux_x86_64/${_pkgname}-${version}.tar.bz2"
-checksum=bdddcdadf730c1b4aaeab99df856fc12f2250b825c52e88dd29b44bb49d72331
+checksum=cb0f130a2ea5a641313d6a566b5d7762f51ccc8fe692018e0fe2bd4c065ba348
 replaces="waterfox"
 
 do_install() {
