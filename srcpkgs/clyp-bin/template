@@ -1,0 +1,24 @@
+# Template file for 'clyp-bin'
+pkgname=clyp-bin
+_pkgname=clyp
+version=0.9.5
+revision=1
+hostmakedepends="tar xz"
+depends="gtk4"
+short_desc="Clipboard manager for Linux"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/murat-cileli/clyp"
+distfiles="https://github.com/murat-cileli/${_pkgname}/releases/download/${version}/${_pkgname}_${version}_amd64.deb"
+checksum=898381294bd036a437c812f6da14a9c44a12bf22aba89737aa6e2468d6aca125
+nostrip=yes
+replaces="clyp"
+
+do_extract() {
+	mkdir -p ${DESTDIR}
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${_pkgname}_${version}_amd64.deb
+}
+
+do_install() {
+	tar xf data.tar.gz -C ${DESTDIR}
+}
