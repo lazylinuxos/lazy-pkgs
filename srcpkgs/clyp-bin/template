@@ -1,7 +1,7 @@
 # Template file for 'clyp-bin'
 pkgname=clyp-bin
 _pkgname=clyp
-version=0.9.5
+version=0.9.6
 revision=1
 hostmakedepends="tar xz"
 depends="gtk4"
@@ -10,7 +10,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/murat-cileli/clyp"
 distfiles="https://github.com/murat-cileli/${_pkgname}/releases/download/${version}/${_pkgname}_${version}_amd64.deb"
-checksum=898381294bd036a437c812f6da14a9c44a12bf22aba89737aa6e2468d6aca125
+checksum=13c99518f93333e711e205522a7e93d776ba64ab54897c65cd3587937297fde0
 nostrip=yes
 replaces="clyp"
 
