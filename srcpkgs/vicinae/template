@@ -1,21 +1,21 @@
 # Template file for 'vicinae'
 pkgname=vicinae
-version=0.8.4
+version=0.8.5
 revision=1
 build_style=cmake
 configure_args="-G Ninja -DVICINAE_GIT_TAG=v${version} -DCMAKE_BUILD_TYPE=Release"
 hostmakedepends="nodejs rapidfuzz-cpp jq protobuf pkg-config"
-makedepends="qt6-base-devel qt6-svg-devel qt6-wayland-devel protobuf-devel cmark-gfm-devel
- layer-shell-qt-devel libqalculate-devel minizip-devel qtkeychain-qt6-devel"
-depends="nodejs qt6-base qt6-svg protobuf cmark-gfm layer-shell-qt libqalculate minizip qtkeychain-qt6"
+makedepends="qt6-base-devel qt6-base-private-devel qt6-wayland-devel qt6-wayland-private-devel qt6-svg-devel 
+ protobuf-devel cmark-gfm-devel layer-shell-qt-devel libqalculate-devel minizip-devel qtkeychain-qt6-devel"
+depends="nodejs qt6-base qt6-wayland qt6-svg protobuf cmark-gfm layer-shell-qt libqalculate minizip qtkeychain-qt6"
 short_desc="Focused launcher for your desktop — native, fast, extensible"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-only"
 homepage="https://github.com/vicinaehq/vicinae"
 distfiles="https://github.com/vicinaehq/vicinae/archive/refs/tags/v${version}.tar.gz
  https://api.github.com/repos/vicinaehq/vicinae/git/ref/tags/v${version}>meta.yml"
-checksum="3e353507ade6269451a30ee36671decae31f8e8edc68e18d0177abfdcd54d1cf
- b03d18550e957ecc65613db932f079e33c8aec2770383b6d6e42c08bbd4f10ad"
+checksum="8fa779c40b205e2fd22666eb7f533c03dfcca5f8957e16c5f85d025d40582190
+ e82f9ce5776e80d1baf264939a5c416c0d0680e44f1ee0bb5a88bc95e314e8b9"
 skip_extraction="meta.yml"
 
 pre_configure() {

@@ -1,8 +1,8 @@
 # Template file for 'librewolf-bin'
 pkgname=librewolf-bin
 _pkgname=librewolf
-version=142.0
-_version=142.0-1
+version=142.0.1
+_version=142.0.1-1
 revision=1
 archs="x86_64"
 build_style="fetch"
@@ -11,7 +11,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MPL-2.0"
 homepage="https://gitlab.com/librewolf-community"
 distfiles="https://gitlab.com/api/v4/projects/44042130/packages/generic/${_pkgname}/${_version}/${_pkgname}-${_version}-linux-x86_64-deb.deb"
-checksum=4288bf1d7c655cef5c68504c0bfe097b6a1ae49466fe776ad4ed6befbd419262
+checksum=e63f3adacf83b055eaff3b4276f07eea0af8709b79ce133829818fb663b19efc
 replaces="librewolf"
 
 do_install() {
