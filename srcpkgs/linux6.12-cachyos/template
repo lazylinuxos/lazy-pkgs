@@ -1,6 +1,6 @@
-# Template file for 'linux-cachyos-lts'
-pkgname=linux-cachyos-lts
-version=6.12.44
+# Template file for 'linux6.12-cachyos'
+pkgname=linux6.12-cachyos
+version=6.12.45
 revision=1
 short_desc="Linux kernel and modules (${version%.*} series) with CachyOS patches"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
@@ -23,7 +23,7 @@ checksum="b1a2562be56e42afb3f8489d4c2a7ac472ac23098f1ef1c1e40da601f54625eb
  ef4f01837d40c1d83a58a210678c47b5348717c71d5e30006b01e65f4de3ef57
  a56b166fccfb268fdaaa029bd43c138054692b10319f2ae9421b980fafd597e4
  67539a212544408d970c614298f439297d141030fb2f83901d360f81fee25d1f
- 0c5c244b7609e6b7c1012605ed6b5a77bfc0d397205c39e3f30619b27a0dcfc1
+ 0284fd49864ba893edd7c234dbce5d24d759927f03be42de8295cd75e7e8c831
 "
 
 python_version=3
@@ -99,7 +99,7 @@ if [ "$build_option_per_gov" ]; then
 	_per_gov=yes
 fi
 
-_kernver="${version}_${revision}-cachyos-lts"
+_kernver="${version}-cachyos_${revision}"
 triggers="kernel-hooks"
 kernel_hooks_version="${_kernver}"
 
@@ -164,10 +164,7 @@ do_configure() {
 		msg_normal "Using provided .config\n"
 		cp -f "${FILESDIR}/config" .config
 	fi
-	
-	# Add package revision to localversion
-	sed -i -e "s|^\(CONFIG_LOCALVERSION=\).*|\1\"_${revision}\"|" .config
-
+	 
 	# Select CPU optimization
     if [ -n "$_processor_opt" ]; then
         MARCH="${_processor_opt^^}"
@@ -268,7 +265,7 @@ do_configure() {
     esac
 
     # Size optimizations
-    ./scripts/config -e MODULE_COMPRESS_ZSTD -d MODULE_COMPRESS_GZIP -d MODULE_COMPRESS_XZ
+    # ./scripts/config -e MODULE_COMPRESS_ZSTD -d MODULE_COMPRESS_GZIP -d MODULE_COMPRESS_XZ
     
     # Debug configuration
     ./scripts/config -d DEBUG_INFO -d DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT -e DEBUG_INFO_NONE
@@ -278,7 +275,10 @@ do_configure() {
     ./scripts/config -e USER_NS
 
     # Recompute defaults for any new symbols
-    yes "" | make ${makejobs} ARCH=x86_64 oldconfig
+    make ${makejobs} ARCH=x86_64 oldconfig
+    
+	# Always use our revision to CONFIG_LOCALVERSION to match our pkg version.
+	sed -i -e "s|^\(CONFIG_LOCALVERSION=\).*|\1\"-cachyos_${revision}\"|" .config    
 }
 
 do_build() {
@@ -298,6 +298,8 @@ do_build() {
 do_install() {
     cd "linux-${version%.*}"
     
+    local hdrdest
+    
     # Run depmod after compressing modules - makes depmod.sh a noop
 	sed -i '2iexit 0' scripts/depmod.sh
 	vmkdir usr/lib
@@ -315,7 +317,8 @@ do_install() {
     # Switch to /usr.
 	vmkdir usr
 	
-	cd ${DESTDIR}/usr/lib/modules/${version}_${revision}
+	# mv ${DESTDIR}/usr/lib/modules/${version}_${revision} ${DESTDIR}/usr/lib/modules/${_kernver}
+	cd ${DESTDIR}/usr/lib/modules/${_kernver}
 	rm -f source build
 	ln -sf ../../../src/kernel-headers-${_kernver} build
 
@@ -436,22 +439,22 @@ do_install() {
 	)
 
 	# ... and run depmod again.
-	depmod -b ${DESTDIR}/usr -F System.map ${version}_${revision}
+	depmod -b ${DESTDIR}/usr -F System.map ${_kernver}
 	rm -f ${DESTDIR}/lib
 }
 
-linux-cachyos-lts-headers_package() {
+linux6.12-cachyos-headers_package() {
 	preserve=yes
 	nostrip=yes
 	noshlibprovides=yes
 	short_desc+=" - source headers for 3rd party modules"
 	pkg_install() {
 		vmove usr/src
-		vmove usr/lib/modules/${version}_${revision}/build
+		vmove usr/lib/modules/${_kernver}/build
 	}
 }
 
-linux-cachyos-lts-dbg_package() {
+linux6.12-cachyos-dbg_package() {
 	preserve=yes
 	nostrip=yes
 	noverifyrdeps=yes
