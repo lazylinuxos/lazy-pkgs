@@ -1,0 +1,11 @@
+--- a/vicinae/src/services/extension-registry/extension-registry.cpp
++++ b/vicinae/src/services/extension-registry/extension-registry.cpp
+@@ -8,7 +8,7 @@
+ #include "zip/unzip.hpp"
+ #include <filesystem>
+ #include <qfilesystemwatcher.h>
+-#include <qjsonparseerror.h>
++#include <QJsonParseError>
+ #include <qlogging.h>
+ 
+ namespace fs = std::filesystem;
