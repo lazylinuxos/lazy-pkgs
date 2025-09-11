@@ -1,6 +1,6 @@
 # Template file for 'skippy-xd'
 pkgname=skippy-xd
-version=2025.08.16
+version=2025.09.07
 revision=2
 build_style=gnu-makefile
 hostmakedepends="pkg-config"
@@ -13,4 +13,4 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/felixfung/skippy-xd"
 distfiles="${homepage}/archive/v${version}.tar.gz"
-checksum=74bc6e6b19fb2639b87fc0ac48d356e9669c1546d540c66617dad663ca8e2a70
+checksum=ccb7df750b7f129b26a9156e15b3519a32e948235791c1771508dacdf1788c50

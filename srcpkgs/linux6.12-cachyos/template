@@ -1,6 +1,6 @@
 # Template file for 'linux6.12-cachyos'
 pkgname=linux6.12-cachyos
-version=6.12.45
+version=6.12.46
 revision=1
 short_desc="Linux kernel and modules (${version%.*} series) with CachyOS patches"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
@@ -23,7 +23,7 @@ checksum="b1a2562be56e42afb3f8489d4c2a7ac472ac23098f1ef1c1e40da601f54625eb
  ef4f01837d40c1d83a58a210678c47b5348717c71d5e30006b01e65f4de3ef57
  a56b166fccfb268fdaaa029bd43c138054692b10319f2ae9421b980fafd597e4
  67539a212544408d970c614298f439297d141030fb2f83901d360f81fee25d1f
- 0284fd49864ba893edd7c234dbce5d24d759927f03be42de8295cd75e7e8c831
+ 19ca82e2324d3943f69f6d2c6422159eb058f865a81bb6362d5999c376fff406
 "
 
 python_version=3
