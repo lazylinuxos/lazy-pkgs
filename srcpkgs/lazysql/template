@@ -1,6 +1,6 @@
 # Template file for 'lazysql'
 pkgname=lazysql
-version=0.4.1
+version=0.4.2
 revision=1
 archs="x86_64 i686 aarch64"
 build_style=go
@@ -10,7 +10,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
 homepage="https://github.com/jorgerojas26/lazysql"
 distfiles="https://github.com/jorgerojas26/${pkgname}/archive/refs/tags/v${version}.tar.gz"
-checksum=849cfe4ffa60173903f2e053820e6d9e41c654ea193bdd5466774e114f4d28d3
+checksum=b085be3949159dfc870f710e7910ce185ceb5ef508c517ab0e50bf5e8d76c095
 
 do_build() {
 	export CGO_CPPFLAGS="$CPPFLAGS"
