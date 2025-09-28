@@ -1,0 +1,30 @@
+# Template file for 'helium-bin'
+pkgname=helium-bin
+version=0.4.12.1
+revision=1
+archs="x86_64"
+create_wrksrc=yes
+build_style=meta
+hostmakedepends="tar xz"
+depends="gtk+3 libXScrnSaver nss alsa-lib"
+short_desc="Private, fast, and honest web browser"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://helium.computer"
+distfiles="https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-x86_64_linux.tar.xz"
+checksum=564a081000f6aa28ff4c07dfb6281e45635703563b9c3130f41f6329f5e1f4f9
+
+do_install() {
+	# Install the files
+	vmkdir usr/lib/helium
+	vcopy helium-${version}-x86_64_linux/* usr/lib/helium
+
+	vmkdir usr/share/applications
+	vinstall ${FILESDIR}/helium.desktop 644 usr/share/applications
+	vinstall helium-${version}-x86_64_linux/product_logo_256.png 644 usr/share/pixmaps helium.png
+	vinstall helium-${version}-x86_64_linux/product_logo_256.png 644 usr/share/icons/hicolor/scalable/apps helium.png
+
+	# link the binary
+	vmkdir usr/bin/
+	ln -s /usr/lib/helium/chrome ${DESTDIR}/usr/bin/helium
+}
