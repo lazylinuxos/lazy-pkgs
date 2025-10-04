@@ -1,0 +1,31 @@
+# Template file for 'freelens-bin'
+pkgname=freelens-bin
+_pkgname=freelens
+version=1.6.1
+revision=1
+hostmakedepends="tar xz"
+depends="gtk+3 nss"
+short_desc="Free IDE for Kubernetes"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="MIT"
+homepage="https://freelensapp.github.io"
+distfiles="https://github.com/freelensapp/${_pkgname}/releases/download/v${version}/Freelens-${version}-linux-amd64.deb"
+checksum=941399eeba387350007d246375a313c24ba90ce27f70c53ba073dd980da6cc5a
+python_version=3
+nopie=yes
+nostrip=yes
+nodebug=yes
+
+do_extract() {
+	mkdir -p ${DESTDIR}
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/Freelens-${version}-linux-amd64.deb
+}
+
+do_install() {
+	tar xf data.tar.xz -C ${DESTDIR}
+	vlicense ${FILESDIR}/LICENSE
+	
+	# link the binary
+	vmkdir usr/bin/
+	ln -s /opt/Freelens/${_pkgname} ${DESTDIR}/usr/bin/	
+}
