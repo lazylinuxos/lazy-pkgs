@@ -27,6 +27,7 @@ contents_cksum() {
 	*.7z)	      cursufx="7z";;
 	*.gem)	      cursufx="gem";;
 	*.crate)      cursufx="crate";;
+	*.AppImage)   cursufx="AppImage";;
 	*) msg_error "$pkgver: unknown distfile suffix for $curfile.\n";;
 	esac
 
@@ -72,6 +73,9 @@ contents_cksum() {
 	gem)
 		cksum=$($XBPS_DIGEST_CMD <($TAR_CMD -x -O -f "$curfile" data.tar.gz | $TAR_CMD -xzO ))
 		;;
+	AppImage)
+		cksum=$($XBPS_DIGEST_CMD "$curfile")
+		;;		
 	*)
 		msg_error "$pkgver: cannot guess $curfile extract suffix. ($cursufx)\n"
 		;;

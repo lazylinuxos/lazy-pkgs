@@ -61,6 +61,7 @@ vextract() {
 	*.7z)	      sfx="7z";;
 	*.gem)	      sfx="gem";;
 	*.crate)      sfx="crate";;
+	*.AppImage)   sfx="AppImage";;	
 	*) msg_error "$pkgver: unknown distfile suffix for $archive.\n";;
 	esac
 
@@ -131,6 +132,11 @@ vextract() {
 		$TAR_CMD -xOf $archive data.tar.gz |
 			$TAR_CMD ${sc:+"$sc"} ${dst:+-C "$dst"} -xz -f -
 		;;
+	AppImage)
+		chmod +x $archive
+		$archive --appimage-extract
+		cp -a squashfs-root/* "$dst"
+		;;				
 	*)
 		msg_error "$pkgver: cannot guess $archive extract suffix. ($sfx)\n"
 		;;
