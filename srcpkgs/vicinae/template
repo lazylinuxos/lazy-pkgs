@@ -1,6 +1,6 @@
 # Template file for 'vicinae'
 pkgname=vicinae
-version=0.15.0
+version=0.15.2
 revision=1
 build_style=cmake
 configure_args="-G Ninja -DVICINAE_GIT_TAG=v${version} -DCMAKE_BUILD_TYPE=Release"
@@ -14,8 +14,8 @@ license="GPL-3.0-only"
 homepage="https://github.com/vicinaehq/vicinae"
 distfiles="https://github.com/vicinaehq/vicinae/archive/refs/tags/v${version}.tar.gz
  https://api.github.com/repos/vicinaehq/vicinae/git/ref/tags/v${version}>meta.yml"
-checksum="3dbc16a3b1c5035a836a3110b778b18440b086618ee1b9d5dc655a7bacd63707
- 7550acc057547cb030be28dd95d3657622edf9174796e46cd022994e9d5f1990"
+checksum="478e9e5717663c9902373d4bc21b250c01010b51985a3fcf5cf651bad0601f8f
+ dcc975447d3a7214452edeeba35a939012dceae4245e7c2544112fda4495f8ec"
 skip_extraction="meta.yml"
 
 pre_configure() {
@@ -25,7 +25,6 @@ pre_configure() {
 
 post_install() {
     vbin build/vicinae/vicinae vicinae
-    vbin build/wlr-clip/vicinae-wlr-clip vicinae-wlr-clip
 
     vmkdir usr/share/${pkgname}
     vcopy extra/themes/* usr/share/${pkgname}/
@@ -33,6 +32,7 @@ post_install() {
     vinstall ${pkgname}/icons/${pkgname}.svg 644 usr/share/icons/hicolor/scalable/apps
     vinstall extra/${pkgname}.desktop 644 usr/share/applications
 
+	rm -rf ${DESTDIR}/usr/lib
 	vsv ${pkgname}
 	
 	# Service doesn't work at this moment, add daemon to autostart 
