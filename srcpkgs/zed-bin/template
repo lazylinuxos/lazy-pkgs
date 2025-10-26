@@ -13,6 +13,7 @@ license="AGPL-3.0-or-later, Apache-2.0, GPL-3.0-or-later"
 homepage="https://zed.dev/"
 distfiles="https://github.com/zed-industries/zed/releases/download/v${version}/zed-linux-x86_64.tar.gz"
 checksum=f76d0a9abb27afac65e9520a92a7aa0a90cf6bf2d85fe436bd77781b93e8d172
+conflicts="zed"
 replaces="zed"
 
 do_install() {
