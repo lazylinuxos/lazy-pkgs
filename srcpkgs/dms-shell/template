@@ -1,0 +1,73 @@
+# Template file for 'dms-shell'
+pkgname=dms-shell
+_pkg1=DankMaterialShell
+_pkg2=danklinux
+version=0.2.5
+revision=1
+archs="x86_64"
+build_style=go
+go_import_path="github.com/AvengeMedia/danklinux"
+go_build_tags=""
+go_ldflags="-linkmode=external"
+depends="dgop quickshell font-inter font-fira-ttf font-firacode material-symbols-variable-ttf"
+optdepends="
+ brightnessctl: laptop display brightness control
+ cava: audio visualizer
+ cliphist: clipboard history
+ matugen: dynamic wallpaper-based theming
+ networkmanager: network management
+ qt5ct: Qt5 application theming
+ qt6ct: Qt6 application theming
+ wl-clipboard: clipboard utilities
+"
+short_desc="A Quickshell-based desktop shell with Material 3 design principles"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="GPL-3.0-only"
+homepage="https://github.com/AvengeMedia/DankMaterialShell"
+distfiles="
+ https://github.com/AvengeMedia/${_pkg1}/archive/v${version}/${_pkg1}-${version}.tar.gz
+ https://github.com/AvengeMedia/${_pkg2}/archive/v${version}/${_pkg2}-${version}.tar.gz
+"
+checksum="
+1f3e4dc657f81ed8a0f1ea080a322754975343202f27a858d69513bcf8244091
+b402dbdee7e88fa81e283d49c706bb005fa0a51a37e0eb48ad8f37040547797b
+"
+
+do_build() {
+	cd danklinux-${version}
+	export CGO_CPPFLAGS="$CPPFLAGS"
+	export CGO_CFLAGS="$CFLAGS"
+	export CGO_CXXFLAGS="$CXXFLAGS"
+	export CGO_LDFLAGS="$LDFLAGS"
+	export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw -ldflags=${go_ldflags}"
+	go build -o dms ./cmd/dms
+}
+
+do_install() {
+	vbin danklinux-${version}/dms
+
+	vmkdir etc/xdg/quickshell/dms
+	vcopy DankMaterialShell-${version}/* etc/xdg/quickshell/dms/
+
+	vmkdir usr/share/doc/${pkgname}
+	vinstall DankMaterialShell-${version}/README.md 644 usr/share/doc/${pkgname}/
+	vcopy DankMaterialShell-${version}/docs/* usr/share/doc/${pkgname}/
+}
+
+dms-shell-niri_package() {
+	short_desc+=" (for Niri)"
+	depends="${sourcepkg} niri"
+	pkg_install() {
+		vmkdir usr/share/doc/dms-shell-niri
+		vcopy ${DESTDIR}/usr/share/doc/dms-shell/* usr/share/doc/dms-shell-niri/
+	}	
+}
+
+# dms-shell-hyprland_package() {
+# 	short_desc+=" (for Hyprland)"
+# 	depends="${sourcepkg} hyprland"
+# 	pkg_install() {
+	# 	vmkdir usr/share/doc/dms-shell-hyprland
+	# 	vcopy ${DESTDIR}/usr/share/doc/dms-shell/* usr/share/doc/dms-shell-hyprland/
+	# }
+# }

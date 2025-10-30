@@ -24,9 +24,6 @@ material-icons-ttf_package() {
 	pkg_install() {
 		vmkdir usr/share/fonts/material-icons-ttf
 		vcopy ${DESTDIR}/usr/share/fonts/${_pkgname}/MaterialIcons* usr/share/fonts/material-icons-ttf/
-		# for f in ${DESTDIR}/usr/share/fonts/${_pkgname}/MaterialIcons*; do
-		# 	cp "$f" usr/share/fonts/material-icons-ttf/
-		# done
 	}
 }
 
@@ -35,9 +32,6 @@ material-symbols-variable-ttf_package() {
 	pkg_install() {
 		vmkdir usr/share/fonts/material-symbols-variable-ttf
 		vcopy ${DESTDIR}/usr/share/fonts/${_pkgname}/*wght*.ttf usr/share/fonts/material-symbols-variable-ttf/
-		# for f in ${DESTDIR}/usr/share/fonts/${_pkgname}/*wght*.ttf; do
-		# 	cp "$f" usr/share/fonts/material-symbols-variable-ttf/
-		# done
 	}	
 }
 
@@ -46,8 +40,5 @@ material-symbols-variable-woff2_package() {
 	pkg_install() {
 		vmkdir usr/share/fonts/material-symbols-variable-woff2
 		vcopy ${DESTDIR}/usr/share/fonts/${_pkgname}/*.woff2 usr/share/fonts/material-symbols-variable-woff2/
-		# for f in ${DESTDIR}/usr/share/fonts/${_pkgname}/*.woff2; do
-		# 	cp "$f" usr/share/fonts/material-symbols-variable-woff2/
-		# done
 	}		
 }
