@@ -1,6 +1,6 @@
 # Template file for 'python3-textual-autocomplete'
 pkgname=python3-textual-autocomplete
-version=4.0.4
+version=4.0.6
 revision=1
 wrksrc="textual_autocomplete-${version}"
 hostmakedepends="python3 python3-build hatchling python3-installer"
@@ -10,7 +10,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
 homepage="https://github.com/darrenburns/textual-autocomplete"
 distfiles="https://files.pythonhosted.org/packages/source/t/textual_autocomplete/textual_autocomplete-${version}.tar.gz"
-checksum=0969987b90a53c1f75753dfe3ad2c7ea0d974b5839dc2a00a2d332c000057871
+checksum=2ba2f0d767be4480ecacb3e4b130cf07340e033c3500fc424fed9125d27a4586
 
 do_build() {
 	python3 -m build --wheel --no-isolation

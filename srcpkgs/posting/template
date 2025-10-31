@@ -1,6 +1,6 @@
 # Template file for 'posting'
 pkgname=posting
-version=2.7.0
+version=2.9.1
 revision=1
 wrksrc="posting-${version}"
 hostmakedepends="python3-build hatchling python3-installer"
@@ -13,7 +13,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
 homepage="https://github.com/darrenburns/posting"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=8afec9056ec23541faeab5a406cfe784cc3ebbebd3814c50e4d1aa7539eaa4dc
+checksum=b574e54eb02b67a0a653cfa96f97a86fc9fc812509ca566ca3aa165c03e22a5e
 
 # If needed, uncomment and modify the prepare phase to handle any renaming or patches
 #prepare() {

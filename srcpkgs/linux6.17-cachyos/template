@@ -1,6 +1,6 @@
 # Template file for 'linux6.17-cachyos'
 pkgname=linux6.17-cachyos
-version=6.17.0
+version=6.17.6
 revision=1
 short_desc="Linux kernel and modules (${version%.*} series) with CachyOS patches"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
@@ -20,9 +20,10 @@ if [ "${version##*.}" != 0 ]; then
 fi
 
 checksum="9b607166a1c999d8326098121222feb080a20a3253975fcdfa2de96ba7f757a7
- fa074096846019b5e21f4557868601594861f718efd478122f097ed1282f9998
- f6bca3824aa275cfebe5764d4954ecf63e375429d217935a2194fe17dbd080e8
- ac567ab44f1562f48b1fd14aace218be28c415eb8b85b45bd4dba924313a45ae
+ 6d2d78f8315dbcdc71e40720d3ab8bb3cb8030a3f391f628569c26b363c0fa05
+ 5b4eaf36b22c383bdbed2887f8bc7047b9e66c3bb3477b24323bdafe88236310
+ cfa929dbe26c5dec70bec29ecb7ee14ba73af6ef680cb939b130bddd49e2533a
+ 54427fe08bcd055c963c579fa61ed23f7be7c1c4e73e85fd53774c72d356d994
 "
 
 python_version=3

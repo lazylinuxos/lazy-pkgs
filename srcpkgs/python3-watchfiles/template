@@ -1,6 +1,6 @@
 # Template file for 'python3-watchfiles'
 pkgname=python3-watchfiles
-version=1.0.5
+version=1.1.0
 revision=1
 wrksrc="watchfiles-${version}"
 hostmakedepends="python3 python3-setuptools python3-wheel python3-build python3-installer maturin cargo"
@@ -12,7 +12,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
 homepage="https://github.com/samuelcolvin/watchfiles"
 distfiles="https://github.com/samuelcolvin/watchfiles/archive/v${version}/python-watchfiles-${version}.tar.gz"
-checksum=9f9765fa55e2cd731dddd2477c505c3b7024269128ca1a5966699cd961260612
+checksum=15051457d29f8e9a16eaa3ec1714052ff07c1134dd3a74ed46e631d4d821b770
 
 pre_build() {
 	cd "$wrksrc"

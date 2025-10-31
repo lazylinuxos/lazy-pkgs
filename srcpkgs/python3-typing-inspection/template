@@ -1,6 +1,6 @@
 # Template file for 'python3-typing-inspection'
 pkgname=python3-typing-inspection
-version=0.4.1
+version=0.4.2
 revision=1
 wrksrc="typing-inspection"
 build_style=python3-pep517
@@ -13,7 +13,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
 homepage="https://github.com/pydantic/typing-inspection"
 distfiles="https://github.com/pydantic/typing-inspection/archive/refs/tags/v${version}.tar.gz"
-checksum=fc86a6be7351071fbaac86ca2b39577108ccdc98ff3e7f4e67b87ba9bdadded9
+checksum=a5c835171179a7744fbd10f102e68dac9b7eae6b73da52c82a3deedfcef6ed2b
 
 post_check() {
     local _site_packages=$(python3 -c "import site; print(site.getsitepackages()[0])")
