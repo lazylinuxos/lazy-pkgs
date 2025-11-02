@@ -25,10 +25,10 @@
  use text::{BufferId, Edit};
  use ui::ElementId;
  
--const NEWLINES: &[u8; u128::BITS as usize] = &[b'\n'; _];
--const BULLETS: &[u8; u128::BITS as usize] = &[b'*'; _];
-+const NEWLINES: &[u8; u128::BITS as usize] = &[b'\n'; u128::BITS as usize];
-+const BULLETS: &[u8; u128::BITS as usize] = &[b'*'; u128::BITS as usize];
+-const NEWLINES: &[u8; rope::Chunk::MASK_BITS] = &[b'\n'; _];
+-const BULLETS: &[u8; rope::Chunk::MASK_BITS] = &[b'*'; _];
++const NEWLINES: &[u8; rope::Chunk::MASK_BITS] = &([b'\n'; rope::Chunk::MASK_BITS]);
++const BULLETS: &[u8; rope::Chunk::MASK_BITS] = &([b'*'; rope::Chunk::MASK_BITS]);
  
  /// Tracks custom blocks such as diagnostics that should be displayed within buffer.
  ///
@@ -39,8 +39,8 @@
  const MAX_EXPANSION_COLUMN: u32 = 256;
  
  // Handles a tab width <= 128
--const SPACES: &[u8; u128::BITS as usize] = &[b' '; _];
-+const SPACES: &[u8; u128::BITS as usize] = &[b' '; u128::BITS as usize];
+-const SPACES: &[u8; rope::Chunk::MASK_BITS] = &[b' '; _];
++const SPACES: &[u8; rope::Chunk::MASK_BITS] = &([b' '; rope::Chunk::MASK_BITS]);
  const MAX_TABS: NonZeroU32 = NonZeroU32::new(SPACES.len() as u32).unwrap();
  
  /// Keeps track of hard tabs in a text buffer.
