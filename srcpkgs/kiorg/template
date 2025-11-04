@@ -1,16 +1,16 @@
 # Template file for 'kiorg'
 pkgname=kiorg
-version=1.1.1
+version=1.2.0
 revision=1
 build_style=cargo
 hostmakedepends="pkg-config"
-makedepends="openssl-devel libzstd-devel oniguruma-devel fontconfig-devel"
-short_desc="Hacker's file manager with VIM inspired keybindl"
+makedepends="openssl-devel libzstd-devel oniguruma-devel fontconfig-devel lld binutils"
+short_desc="Hacker's file manager with VIM inspired keybind"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
 homepage="https://github.com/houqp/kiorg"
 distfiles="https://github.com/houqp/kiorg/archive/refs/tags/v${version}.tar.gz"
-checksum=a9a4c1206e43d70503e87fdd177900ef7a01edde45a6d1ac1eb832b8a10a0bd3
+checksum=dd1732f97a6e7857838bc41c24e533f04dbe259f7f8ae038b5d154220ffe037a
 
 post_extract() {
 	cp -r ${FILESDIR}/pdf_fonts assets/

@@ -4523,3 +4523,4 @@ libXISF.so.0 libxisf-0.2.9_1
 libtext-engine-0.1.so.0 text-engine-0.1.1_1
 libvgm-player.so libvgm-player-0.0.1_1
 libcmark-gfm.so.0 cmark-gfm-0.29.0.gfm.13_1
+libcmark-gfm-extensions.so.0 cmark-gfm-0.29.0.gfm.13_1
