@@ -1,6 +1,6 @@
 # Template file for 'runkit'
 pkgname=runkit
-version=0.1.0
+version=1.0.0
 revision=1
 build_style=cargo
 hostmakedepends="pkg-config gtk4-devel libadwaita-devel glib-devel pango-devel"
@@ -8,22 +8,29 @@ makedepends="gtk4-devel libadwaita-devel glib-devel pango-devel"
 short_desc="GUI manager for runit services"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
-homepage="https://github.com/lazylinuxos/runkit"
-distfiles="https://github.com/lazylinuxos/runkit/archive/refs/tags/${version}.tar.gz"
-checksum=8c949c58416189c02e42b6709e78f7d68ce3557256af7e387603cffe50888d5d
+homepage="https://github.com/Letdown2491/runkit"
+distfiles="https://github.com/Letdown2491/runkit/archive/refs/tags/v${version}.tar.gz"
+checksum=f3eba5572ca39694b86ed15442c0de028a743a687baba133c8a35cb144b9ad4d
+
+do_build() {
+        cargo build --release
+}
 
 do_install() {
-	vinstall target/x86_64-unknown-linux-gnu/release/runkit 755 usr/libexec
-	vinstall target/x86_64-unknown-linux-gnu/release/runkitd 755 usr/libexec
+	vinstall target/release/runkit 755 usr/bin
+	vinstall target/release/runkitd 755 usr/bin
+
+	sed -i 's|/usr/libexec/runkit|/usr/bin/runkit|' \
+		assets/applications/tech.geektoshi.Runkit.desktop
+
+    vinstall assets/applications/tech.geektoshi.Runkit.desktop 644 usr/share/applications tech.geektoshi.Runkit.desktop
+	vinstall assets/dbus-1/services/tech.geektoshi.Runkit.service 644 usr/share/dbus-1/services tech.geektoshi.Runkit.service 
+    vinstall assets/polkit-1/actions/tech.geektoshi.Runkit.policy 644 usr/share/polkit-1/actions tech.geektoshi.Runkit.policy
+	vinstall assets/icons/hicolor/scalable/apps/runkit.svg 644 usr/share/icons/hicolor/scalable/apps runkit.svg
 
 	for size in 16x16 24x24 32x32 48x48 64x64 96x96 128x128 256x256 512x512; do
 		vinstall "assets/icons/hicolor/${size}/apps/runkit.png" 644 "usr/share/icons/hicolor/${size}/apps" "runkit.png"
 	done
-
-	vinstall assets/icons/hicolor/scalable/apps/runkit.svg 644 usr/share/icons/hicolor/scalable/apps runkit.svg
-    vinstall assets/applications/tech.geektoshi.Runkit.desktop 644 usr/share/applications tech.geektoshi.Runkit.desktop
-	vinstall assets/dbus-1/services/tech.geektoshi.Runkit.service 644 usr/share/dbus-1/services tech.geektoshi.Runkit.service 
-    vinstall assets/polkit-1/actions/tech.geektoshi.Runkit.policy 644 usr/share/polkit-1/actions tech.geektoshi.Runkit.policy
 
     vlicense LICENSE
 }
