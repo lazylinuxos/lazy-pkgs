@@ -17,11 +17,8 @@ do_build() {
 }
 
 do_install() {
-	vinstall target/release/runkit 755 usr/bin
-	vinstall target/release/runkitd 755 usr/bin
-
-	sed -i 's|/usr/libexec/runkit|/usr/bin/runkit|' \
-		assets/applications/tech.geektoshi.Runkit.desktop
+	vinstall target/release/runkit 755 usr/libexec
+	vinstall target/release/runkitd 755 usr/libexec
 
     vinstall assets/applications/tech.geektoshi.Runkit.desktop 644 usr/share/applications tech.geektoshi.Runkit.desktop
 	vinstall assets/dbus-1/services/tech.geektoshi.Runkit.service 644 usr/share/dbus-1/services tech.geektoshi.Runkit.service 

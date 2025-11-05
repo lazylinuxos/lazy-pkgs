@@ -15,7 +15,7 @@ optdepends="
  cava: audio visualizer
  cliphist: clipboard history
  matugen: dynamic wallpaper-based theming
- networkmanager: network management
+ NetworkManager: network management
  qt5ct: Qt5 application theming
  qt6ct: Qt6 application theming
  wl-clipboard: clipboard utilities
