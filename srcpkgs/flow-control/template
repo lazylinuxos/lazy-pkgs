@@ -1,0 +1,19 @@
+# Template file for 'flow-control'
+pkgname=flow-control
+version=0.6.0
+revision=1
+build_style=zig-build
+optdepends=('ripgrep: project-wide search')
+short_desc="A programmer's text editor"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="MIT"
+homepage="https://github.com/neurocyte/flow"
+distfiles="https://github.com/neurocyte/flow/archive/refs/tags/v${version}.tar.gz"
+checksum=cdfb954092e41b3676a3ee3e2d10406b2cd1590304e1492f560c0bab66ef99e3
+
+do_install() {
+    vbin "zig-out/bin/flow"
+    vlicense LICENSE
+    vinstall "contrib/flow-control.desktop" 644 usr/share/applications
+    vinstall "contrib/icons/192x192/flow-control.png" 644 usr/share/pixmaps
+}

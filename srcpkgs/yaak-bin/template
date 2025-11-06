@@ -1,6 +1,6 @@
 # Template file for 'yaak-bin'
 pkgname=yaak-bin
-version=2025.7.3
+version=2025.8.2
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -8,10 +8,10 @@ hostmakedepends="rpmextract"
 short_desc="Intuitive desktop API client"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
-homepage="hhttps://yaak.app/"
+homepage="https://yaak.app/"
 changelog="https://yaak.app/blog/${version}"
-distfiles="https://github.com/mountain-loop/yaak/releases/download/v${version}/yaak-${version}-${revision}.x86_64.rpm"
-checksum=bffc89cadc0c2c36f4a2757e99b4ea077cfb8577c6552c479010cf485ffb914c
+distfiles="https://github.com/mountain-loop/yaak/releases/download/v${version}/yaak-${version}-${revision}.x86_64_linux.rpm"
+checksum=2bd516be6df5e6dbb445cd60430f70424de1e7db3d5b764b789ca659fd1321d0
 nopie=yes
 replaces="yaak"
 
