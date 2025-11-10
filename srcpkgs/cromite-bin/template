@@ -1,7 +1,7 @@
 # Template file for 'cromite-bin'
 pkgname=cromite-bin
-version=142.0.7444.60
-_cromite_commit=28351d970456ac78902df4463190a35a7106df6c
+version=142.0.7444.138
+_cromite_commit=851be9370b90564ca9522f0531d661ca276f73b9
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -13,7 +13,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/uazo/cromite"
 distfiles="https://github.com/uazo/cromite/releases/download/v${version}-${_cromite_commit}/chrome-lin64.tar.gz"
-checksum=173a7470dd20add1c04fa546c244b37f6cc4549d4e598eeda0b855b520a534fb
+checksum=af81bf752b29859a757dbfd78ce94ace56d94f7886d8476469cf4eb1517ef128
 replaces="cromite"
 
 do_install() {

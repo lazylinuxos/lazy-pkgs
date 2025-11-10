@@ -1,23 +1,15 @@
 # Template file for 'distrobox'
 pkgname=distrobox
-version=1.8.1.2
+version=1.8.2.1
 revision=1
 short_desc="Podman/Docker wrapper to use any linux distribution in your terminal"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://distrobox.it"
 distfiles="https://github.com/89luca89/${pkgname}/archive/${version}.tar.gz"
-checksum=3ecbce9b8c5b5df941f986798ffa6ea7fdf742223d42204207974c4323d5b9fc
+checksum=2c6b2ac9e0db04eb22edab1572b1e62284f5f651c292f536c59fb908d573d0a2
 
 do_install() {
 	./install --prefix "${DESTDIR}/usr"
-	vdoc docs/README.md
-	vdoc docs/compatibility.md
-	vdoc docs/featured_articles.md
-	vdoc docs/useful_tips.md
-	vdoc docs/posts/distrobox_custom.md
-	vdoc docs/posts/execute_commands_on_host.md
-	vdoc docs/posts/integrate_vscode_distrobox.md
-	vdoc docs/posts/run_latest_gnome_kde_on_distrobox.md
-	vdoc docs/posts/run_libvirt_in_distrobox.md
+	for f in $(find docs -type f -name '*.md'); do vdoc "$f"; done
 }

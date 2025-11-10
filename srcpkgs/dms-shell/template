@@ -2,7 +2,7 @@
 pkgname=dms-shell
 _pkg1=DankMaterialShell
 _pkg2=danklinux
-version=0.3.4
+version=0.4.3
 revision=1
 archs="x86_64"
 build_style=go
@@ -29,8 +29,8 @@ distfiles="
  https://github.com/AvengeMedia/${_pkg2}/archive/v${version}/${_pkg2}-${version}.tar.gz
 "
 checksum="
-51daf2b4ba7599d1961125b63353b3a2c9d1e122d59d1180150b2354bf80de18
-267137eafa983c6f610e560340c9dbfc6db2e434ca21f3a5e7b0dbdb15c4f4d9
+35c1e26220331328357e5fc85188126a2ff4d18650d8c5aa8b7aca7500bb419b
+ff3ab7a61b120d5d8ed87c154758de75614fb097ce882ba4ad8a09fd795e97f9
 "
 
 do_build() {
