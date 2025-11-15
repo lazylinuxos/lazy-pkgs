@@ -1,12 +1,11 @@
 # Template file for 'dms-shell'
 pkgname=dms-shell
 _pkg1=DankMaterialShell
-_pkg2=danklinux
-version=0.4.3
+version=0.5.2
 revision=1
 archs="x86_64"
 build_style=go
-go_import_path="github.com/AvengeMedia/danklinux"
+go_import_path="github.com/AvengeMedia/${_pkg1}"
 go_build_tags=""
 go_ldflags="-linkmode=external"
 depends="dgop quickshell font-inter font-fira-ttf font-firacode material-symbols-variable-ttf"
@@ -23,18 +22,12 @@ optdepends="
 short_desc="A Quickshell-based desktop shell with Material 3 design principles"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-only"
-homepage="https://github.com/AvengeMedia/DankMaterialShell"
-distfiles="
- https://github.com/AvengeMedia/${_pkg1}/archive/v${version}/${_pkg1}-${version}.tar.gz
- https://github.com/AvengeMedia/${_pkg2}/archive/v${version}/${_pkg2}-${version}.tar.gz
-"
-checksum="
-35c1e26220331328357e5fc85188126a2ff4d18650d8c5aa8b7aca7500bb419b
-ff3ab7a61b120d5d8ed87c154758de75614fb097ce882ba4ad8a09fd795e97f9
-"
+homepage="https://github.com/AvengeMedia/${_pkg1}"
+distfiles="https://github.com/AvengeMedia/${_pkg1}/archive/v${version}/${_pkg1}-${version}.tar.gz"
+checksum="fbee73ece21b037a187e310f0c39eba4a4d3b08d29213b3a430cb07482030cd9"
 
 do_build() {
-	cd danklinux-${version}
+	cd core 
 	export CGO_CPPFLAGS="$CPPFLAGS"
 	export CGO_CFLAGS="$CFLAGS"
 	export CGO_CXXFLAGS="$CXXFLAGS"
@@ -44,14 +37,14 @@ do_build() {
 }
 
 do_install() {
-	vbin danklinux-${version}/dms
+	vbin core/dms
 
 	vmkdir etc/xdg/quickshell/dms
-	vcopy DankMaterialShell-${version}/* etc/xdg/quickshell/dms/
+	vcopy * etc/xdg/quickshell/dms/
 
 	vmkdir usr/share/doc/${pkgname}
-	vinstall DankMaterialShell-${version}/README.md 644 usr/share/doc/${pkgname}/
-	vcopy DankMaterialShell-${version}/docs/* usr/share/doc/${pkgname}/
+	vinstall README.md 644 usr/share/doc/${pkgname}/
+	vcopy docs/* usr/share/doc/${pkgname}/
 }
 
 dms-shell-niri_package() {

@@ -1,6 +1,6 @@
 # Template file for 'vicinae'
 pkgname=vicinae
-version=0.16.5
+version=0.16.6
 revision=1
 build_style=cmake
 configure_args="-G Ninja -DVICINAE_GIT_TAG=v${version} -DCMAKE_BUILD_TYPE=Release"
@@ -14,8 +14,8 @@ license="GPL-3.0-only"
 homepage="https://github.com/vicinaehq/vicinae"
 distfiles="https://github.com/vicinaehq/vicinae/archive/refs/tags/v${version}.tar.gz
  https://api.github.com/repos/vicinaehq/vicinae/git/ref/tags/v${version}>meta.yml"
-checksum="5787369dc70b4e10402b9b6196c38c98706ea4f0971cf1a88d5dd8dcea540890
- 1c2573f20cec29b5eb5f687dd9a2ba0d539af701adecca1061f174ef96b52b59"
+checksum="d89bc433f86f652af0eafa3e761e54ee33fb8964512188e177ea6c9fee4894a2
+ e11dacd26728a07a3e982a4a859e333baba236009f9d7c8436cc22f7610a8ae9"
 skip_extraction="meta.yml"
 
 pre_configure() {
