@@ -1,6 +1,6 @@
 # Template file for 'xlibre'
 pkgname=xlibre-server
-version=25.0.0.15
+version=25.0.0.16
 revision=1
 build_style=meson
 configure_args="-Dipv6=true -Dxorg=true -Dxnest=true -Dxephyr=true -Dxvfb=true -Dhal=false -Dudev=true -Dxkb_dir=/usr/share/X11/xkb -Dxkb_output_dir=/var/lib/xkb -Dlinux_acpi=true -Dlinux_apm=false -Dsuid_wrapper=true -Dxcsecurity=true -Dglamor=true -Ddri2=true -Ddri3=true -Dglx=true -Dsystemd_logind=$(vopt_if elogind true false)"
@@ -12,7 +12,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT, BSD-3-Clause"
 homepage="https://x11libre.net/"
 distfiles="https://github.com/X11Libre/xserver/archive/refs/tags/xlibre-xserver-${version}.tar.gz"
-checksum=cebbe482328a3dc04b8d74e0ca81f849a7ef1a3dd46275f55f3218fb5d60e5f3
+checksum=0187e57331daefa75ddc33a4f878ef4c08526b83dc91dbc51a25375d2ff33b8c
 provides="xserver-abi-extension-10_1 xserver-abi-input-24_1 xserver-abi-video-25_1 xf86-video-modesetting-1_1"
 replaces="xf86-video-modesetting>=0 glamor-egl>=0"
 conf_files="/etc/X11/Xwrapper.config"
