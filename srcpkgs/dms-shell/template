@@ -2,7 +2,7 @@
 pkgname=dms-shell
 _pkg1=DankMaterialShell
 version=0.6.2
-revision=1
+revision=2
 archs="x86_64"
 build_style=go
 go_import_path="github.com/AvengeMedia/${_pkg1}"
@@ -40,7 +40,7 @@ do_install() {
 	vbin core/dms
 
 	vmkdir etc/xdg/quickshell/dms
-	vcopy * etc/xdg/quickshell/dms/
+	vcopy quickshell/* etc/xdg/quickshell/dms/
 
 	vmkdir usr/share/doc/${pkgname}
 	vinstall README.md 644 usr/share/doc/${pkgname}/
