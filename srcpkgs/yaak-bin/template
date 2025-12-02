@@ -1,6 +1,6 @@
 # Template file for 'yaak-bin'
 pkgname=yaak-bin
-version=2025.8.2
+version=2025.9.1
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -10,8 +10,8 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
 homepage="https://yaak.app/"
 changelog="https://yaak.app/blog/${version}"
-distfiles="https://github.com/mountain-loop/yaak/releases/download/v${version}/yaak-${version}-${revision}.x86_64_linux.rpm"
-checksum=2bd516be6df5e6dbb445cd60430f70424de1e7db3d5b764b789ca659fd1321d0
+distfiles="https://github.com/mountain-loop/yaak/releases/download/v${version}/yaak-${version}-${revision}.x86_64.rpm"
+checksum=35c1539914f4f8c5b62cca3697e4ab7bca3414b9f24854d31f08bf476e11cdbc
 nopie=yes
 replaces="yaak"
 

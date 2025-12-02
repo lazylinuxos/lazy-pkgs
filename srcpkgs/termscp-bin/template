@@ -1,7 +1,7 @@
 # Template file for 'termscp-bin'
 pkgname=termscp-bin
 _pkgname=termscp
-version=0.18.0
+version=0.19.0
 revision=1
 hostmakedepends="tar xz"
 depends="dbus-glib libsmbclient pkg-config"
@@ -9,13 +9,15 @@ short_desc="Feature rich terminal file transfer"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="MIT"
 homepage="https://termscp.veeso.dev"
-distfiles="https://github.com/veeso/termscp/releases/download/v${version}/${_pkgname}_${version}_amd64.deb"
-checksum=bcbcfc31471965e7b20344c6e346bc08cdb47ef278659b5f2abddb524f860347
+distfiles="https://github.com/veeso/termscp/releases/download/v${version}/${_pkgname}_${version}-${revision}_amd64.deb"
+checksum=c88abe6de084cb457116c42e073b5803b820796d630b12628fe726df23bcecc0
 replaces="termscp"
+noverifyrdeps=yes
+disable_shlib_provides=yes
 
 do_extract() {
 	mkdir -p ${DESTDIR}
-	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${_pkgname}_${version}_amd64.deb
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${_pkgname}_${version}-${revision}_amd64.deb
 }
 
 do_install() {
