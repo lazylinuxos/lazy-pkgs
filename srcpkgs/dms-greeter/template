@@ -2,7 +2,7 @@
 pkgname=dms-greeter
 _pkg1=DankMaterialShell
 version=0.6.2
-revision=1
+revision=2
 archs="x86_64"
 build_style=meta
 depends="greetd quickshell"

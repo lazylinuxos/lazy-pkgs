@@ -1,0 +1,26 @@
+# Template file for 'wayscriber-configurator'
+pkgname=wayscriber-configurator
+version=0.8.7
+revision=1
+build_style=cargo
+configure_args="--manifest-path configurator/Cargo.toml"
+hostmakedepends="pkg-config"
+makedepends="cairo-devel wayland-devel pango-devel libxkbcommon-devel gcc glibc-devel"
+depends="cairo wayland pango libgcc glibc libxkbcommon"
+short_desc="GUI configurator for Wayscriber (Iced)"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="MIT"
+homepage="https://wayscriber.com"
+distfiles="https://github.com/devmobasa/wayscriber/archive/refs/tags/v${version}.tar.gz"
+checksum=405fdd2150f10237b24b7897ce2bdc86928d9b1d83029bc5a400a30db701e7cc
+
+# do_build() {
+#     cargo build --release --frozen --manifest-path configurator/Cargo.toml --bins
+# }
+
+do_install() {
+    vbin target/${RUST_TARGET}/release/wayscriber-configurator
+
+    vinstall README.md 644 usr/share/doc/${pkgname}
+    [ -f LICENSE ] && vinstall LICENSE 644 usr/share/licenses/${pkgname}
+}
