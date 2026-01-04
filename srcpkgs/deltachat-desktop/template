@@ -1,6 +1,6 @@
 # Template for deltachat-desktop (Electron version)
 pkgname=deltachat-desktop
-version=2.25.3
+version=2.35.0
 revision=1
 build_style=meta
 _electronversion=35
@@ -12,7 +12,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/deltachat/deltachat-desktop"
 distfiles="https://github.com/deltachat/deltachat-desktop/archive/refs/tags/v${version}.tar.gz"
-checksum=0f873c220c082a648e555222fec3c4b9c6c727511484235823359c76f2c3036d
+checksum=3ee956673cff996188888cf8a87f6f56e19b279cba99e07bc370a09ca0254df3
 _resolutions="16 32 48 64 96 128 256 512 1024"
 
 pre_build() {

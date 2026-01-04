@@ -1,10 +1,10 @@
 # Template file for 'vicinae'
 pkgname=vicinae
-version=0.16.11
+version=0.18.1
 revision=1
 build_style=cmake
 configure_args="-G Ninja -DVICINAE_GIT_TAG=v${version} -DCMAKE_BUILD_TYPE=Release"
-hostmakedepends="nodejs rapidfuzz-cpp jq protobuf pkg-config"
+hostmakedepends="git nodejs rapidfuzz-cpp jq protobuf pkg-config"
 makedepends="qt6-base-devel qt6-base-private-devel qt6-wayland-devel qt6-wayland-private-devel qt6-svg-devel 
  protobuf-devel cmark-gfm-devel layer-shell-qt-devel libqalculate-devel minizip-devel qtkeychain-qt6-devel"
 depends="nodejs qt6-base qt6-wayland qt6-svg protobuf cmark-gfm layer-shell-qt libqalculate minizip qtkeychain-qt6"
@@ -14,8 +14,8 @@ license="GPL-3.0-only"
 homepage="https://github.com/vicinaehq/vicinae"
 distfiles="https://github.com/vicinaehq/vicinae/archive/refs/tags/v${version}.tar.gz
  https://api.github.com/repos/vicinaehq/vicinae/git/ref/tags/v${version}>meta.yml"
-checksum="91c3c9d2b51f2b125197764945010b7edeacd081d613a8251cb09a026bfa9210
- cf4056c079ce00c2c24f6dc2f1ff617c49f279670906bd5ba2d796b5be41408c"
+checksum="52f2082135387e1a90fa72732ab9cac521f82f9469b08cf4117783cffe8d7e81
+ c754184fe0667d1f63be8cedd1a323f6ad87145c9bacbe573b74f53b5a485a03"
 skip_extraction="meta.yml"
 
 pre_configure() {
@@ -31,6 +31,7 @@ post_install() {
 
     vinstall ${pkgname}/icons/${pkgname}.svg 644 usr/share/icons/hicolor/scalable/apps
     vinstall extra/${pkgname}.desktop 644 usr/share/applications
+    vinstall extra/${pkgname}-url-handler.desktop 644 usr/share/applications
 
 	rm -rf ${DESTDIR}/usr/lib
 	vsv ${pkgname}

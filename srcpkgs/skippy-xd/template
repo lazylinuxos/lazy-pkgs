@@ -1,8 +1,8 @@
 # Template file for 'skippy-xd'
 pkgname=skippy-xd
-version=2025.11.30
+version=2026.01.04
 revision=1
-build_style=gnu-makefile
+build_style=meson
 hostmakedepends="pkg-config"
 makedepends="libX11-devel libXext-devel libXft-devel libXcomposite-devel libXdamage-devel
 	libXfixes-devel libXinerama-devel libXmu-devel libXrender-devel freetype-devel
@@ -13,4 +13,4 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/felixfung/skippy-xd"
 distfiles="${homepage}/archive/v${version}.tar.gz"
-checksum=472487d815ef42db11aa9be9683ad9cb9153bf791f994b41062d2678069d3cd9
+checksum=78f29d5903408a47dda329c72cf93e8a33a1c0f597e8ad2f538395bb94d6090b
