@@ -1,0 +1,36 @@
+# Template file for 'vicinae-bin'
+pkgname=vicinae-bin
+version=0.18.1
+revision=1
+archs="x86_64"
+depends="
+ nodejs
+ qt6-base
+ qt6-svg
+ layer-shell-qt
+ libqalculate
+ qtkeychain-qt6
+ libxml2
+ minizip
+"
+short_desc="Focused launcher for your desktop — native, fast, extensible"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="GPL-3.0-only"
+homepage="https://github.com/vicinaehq/vicinae"
+distfiles="https://github.com/vicinaehq/vicinae/releases/download/v${version}/vicinae-linux-x86_64-v${version}.tar.gz"
+checksum=d70d23a76dad2697648be4d85da1121b1b177f2a6d9580b2f9cd0b5f54165e29
+conflicts="vicinae"
+replaces="vicinae"
+noverifyrdeps=yes
+disable_shlib_provides=yes
+
+do_install() {
+	vbin bin/vicinae
+
+	vmkdir usr/share
+	vcopy share/* usr/share
+	
+	# Service doesn't work at this moment, add daemon to autostart 
+	vmkdir etc/xdg/autostart
+	vinstall ${FILESDIR}/vicinae-server.desktop 644 etc/xdg/autostart
+}
