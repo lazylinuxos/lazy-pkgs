@@ -1,6 +1,6 @@
 # Template file for 'vicinae-bin'
 pkgname=vicinae-bin
-version=0.18.1
+version=0.18.3
 revision=1
 archs="x86_64"
 depends="
@@ -18,7 +18,7 @@ maintainer="nerdyslacker <karyan40024@gmail.com>"
 license="GPL-3.0-only"
 homepage="https://github.com/vicinaehq/vicinae"
 distfiles="https://github.com/vicinaehq/vicinae/releases/download/v${version}/vicinae-linux-x86_64-v${version}.tar.gz"
-checksum=d70d23a76dad2697648be4d85da1121b1b177f2a6d9580b2f9cd0b5f54165e29
+checksum=92f4c8d82c3063ba24fb4ec8fc1d494578c9b32c3f6459f1233e4ef34317001f
 conflicts="vicinae"
 replaces="vicinae"
 noverifyrdeps=yes
