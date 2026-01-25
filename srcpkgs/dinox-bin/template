@@ -1,0 +1,34 @@
+# Template file for 'dinox-bin'
+pkgname=dinox-bin
+version=0.9.8.4
+revision=1
+wrksrc="dinox-bin-${version}"
+depends="gtk4 hicolor-icon-theme"
+short_desc="DinoX – fork of Dino XMPP client using GTK4/Libadwaita"
+maintainer="nerdyslacker <karyan40024@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/rallep71/dinox"
+distfiles="https://github.com/rallep71/dinox/releases/download/v${version}/DinoX--x86_64.AppImage"
+checksum=e1dd35fa27fe05d203a48af6326bc783d6a1f60e32f921897440a9fbadb474d9
+python_version=3
+nocross=yes
+nopie=yes
+nostrip=yes
+nodebug=yes
+noverifyrdeps=yes
+disable_shlib_provides=yes
+
+do_install() {
+	vmkdir opt/dinox
+	vcopy ${wrksrc}/usr/*  opt/dinox
+
+	vmkdir usr/share
+	vcopy ${wrksrc}/usr/share/*  usr/share
+
+	vmkdir usr/bin
+	vbin ${FILESDIR}/dinox.sh dinox
+	ln -sf /opt/obfs4proxy ${DESTDIR}/usr/bin/obfs4proxy
+	ln -sf /opt/tor ${DESTDIR}/usr/bin/tor
+
+	rm -rf ${DESTDIR}/opt/dinox/{AppRun,im.github.rallep71.DinoX.desktop,share}
+}
