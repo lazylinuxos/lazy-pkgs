@@ -3,15 +3,12 @@ pkgname=dinox
 version=0.9.8.4
 revision=1
 build_style=meson
-configure_args="-Dplugin-rtp=enabled -Dplugin-omemo=enabled -Dplugin-openpgp=enabled
- -Dplugin-http-files=enabled -Dplugin-ice=enabled -Dplugin-notification-sound=enabled
-"
 hostmakedepends="ninja cmake gettext unzip pkg-config vala glib-devel"
 makedepends="qrencode-devel gtk4-devel gpgme-devel libgee-devel
  libgcrypt-devel libsoup3-devel libomemo-c-devel sqlite-devel sqlcipher-devel
  libcanberra-devel gspell-devel libsrtp-devel libnice-devel gnutls-devel
  gst-plugins-base1-devel libadwaita-devel icu-devel libdbusmenu-glib-devel
- libsecret-devel webrtc-audio-processing-devel
+ libsecret-devel webrtc-audio-processing-2-devel
 "
 short_desc="DinoX – fork of Dino XMPP client using GTK4/Libadwaita"
 maintainer="nerdyslacker <karyan40024@gmail.com>"
@@ -20,7 +17,7 @@ homepage="https://github.com/rallep71/dinox"
 distfiles="https://github.com/rallep71/dinox/archive/refs/tags/v${version}.tar.gz"
 checksum=850996ec3a0d08ee420256d63e1bcfccc732f2a3986edc3ca1eb0fa18f1a4d85
 
-post_install() {
-    rm -rf ${DESTDIR}/usr/include
-    rm -rf ${DESTDIR}/usr/lib/*.so
-}
+# post_install() {
+#     rm -rf ${DESTDIR}/usr/include
+#     rm -rf ${DESTDIR}/usr/lib/*.so
+# }
